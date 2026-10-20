@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Signika:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a fortune teller's booth at the fair. A crystal ball showing her prediction confidence,
+     the duel in the middle, and your three hand choices on the table. Single theme: teal tent, red velvet, gold fringe. */
+:root {
+  --tent: #0f3b3e;
+  --velvet: #7a1424;
+  --gold: #e7b850;
+  --ink: #f7ecd8;
+  --muted: #b9c9c2;
+  --orb: #9be3e0;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0 30px, transparent 30px 60px),
+    var(--tent);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes swirl {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.swirl {
+  animation: swirl 9s linear infinite;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.shake {
+  animation: shake 0.22s ease-in-out 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swirl,
+  .shake {
+    animation: none;
+  }
+}

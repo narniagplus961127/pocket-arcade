@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "lemon": "var(--lemon)",
+        "leaf": "var(--leaf)",
+        "awning": "var(--awning)"
+      },
+      "fontFamily": {
+        "display": ["\"Lobster Two\"", "Georgia", "serif"],
+        "body": ["Urbanist", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

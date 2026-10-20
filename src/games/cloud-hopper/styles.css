@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Mulish:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a tall pastel sky on a full-screen canvas; a little bird bounces up from cloud to cloud.
+     Height counter in the corner, start and results on a soft card. Single theme: a candy-coloured sky that darkens to space as you climb. */
+:root {
+  --ink: #2b2347;
+  --muted: #6b6390;
+  --card: rgba(255, 255, 255, 0.88);
+  --sun: #ff8fa3;
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #bfe3ff;
+  color: var(--ink);
+}

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a temple bell frame. Status line above, six bells hung from one beam, round and record below.
+   Single theme: jade lacquer and brass at dusk. */
+:root {
+  --jade: #0f2a26;
+  --jade-2: #173d37;
+  --brass: #d9a441;
+  --brass-hi: #f6d58a;
+  --ink: #f3ead7;
+  --muted: #9fbab2;
+  --wrong: #e0644f;
+  --font-display: 'Marcellus', Georgia, serif;
+  --font-body: 'Karla', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  background: radial-gradient(ellipse at 50% 30%, var(--jade-2), var(--jade) 70%);
+  background-color: var(--jade);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 32px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(40px, 10vw, 60px)/1 var(--font-display);
+  color: var(--brass-hi);
+  letter-spacing: 0.04em;
+  text-wrap: balance;
+}
+.sub {
+  margin: 6px 0 0;
+  color: var(--muted);
+  max-width: 52ch;
+  line-height: 1.55;
+}
+.status {
+  min-height: 30px;
+  font: 400 22px/1.3 var(--font-display);
+  color: var(--ink);
+  letter-spacing: 0.03em;
+}
+.status.rev {
+  color: var(--brass-hi);
+}
+.status.bad {
+  color: var(--wrong);
+}
+.frame {
+  width: 100%;
+  position: relative;
+  padding-top: 18px;
+}
+.beam {
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(#5a2f1e, #3a1c12);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+.beam::before,
+.beam::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  width: 22px;
+  height: 28px;
+  background: #3a1c12;
+  border-radius: 4px;
+}
+.beam::before {
+  left: -4px;
+}
+.beam::after {
+  right: -4px;
+}
+.bells {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(4px, 2vw, 16px);
+  margin-top: -2px;
+}
+.bell {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0;
+  min-width: 0;
+}
+.bell .rope {
+  width: 2px;
+  height: calc(16px + var(--drop, 0px));
+  background: #c8b08a;
+}
+.bell svg {
+  width: 100%;
+  max-width: 92px;
+  height: auto;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+  transition: filter 0.2s;
+}
+.bell .key {
+  margin-top: 6px;
+  font: 700 12px/1 var(--font-body);
+  color: var(--muted);
+}
+.bell.ring {
+  animation: swing 0.7s ease-out;
+}
+.bell.ring svg,
+.bell.lit svg {
+  filter: drop-shadow(0 0 18px var(--glow)) drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+}
+.bell:focus-visible {
+  outline: 2px solid var(--brass-hi);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.bell:disabled {
+  cursor: default;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(9deg);
+  }
+  45% {
+    transform: rotate(-6deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.row {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.stat .k {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.stat .v {
+  font: 400 30px/1.1 var(--font-display);
+  color: var(--brass-hi);
+  font-variant-numeric: tabular-nums;
+}
+.btn {
+  font: 400 20px/1 var(--font-display);
+  letter-spacing: 0.06em;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 2px solid var(--brass);
+  background: var(--brass);
+  color: #1c140a;
+  cursor: pointer;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--brass-hi);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.rules {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 56ch;
+}
+.rules b {
+  color: var(--ink);
+}
+.dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  min-height: 10px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(243, 234, 215, 0.18);
+}
+.dots i.on {
+  background: var(--brass-hi);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bell.ring {
+    animation: none;
+  }
+}

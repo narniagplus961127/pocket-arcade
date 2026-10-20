@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "lantern": "var(--lantern)",
+        "gold": "var(--gold)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["\"Kaisei Decol\"", "Georgia", "serif"],
+        "body": ["Murecho", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a painter's canvas board with the paint pots lined up underneath like a palette; moves counter as a tube of paint.
+   Light: studio daylight. Dark: the studio at night. */
+:root {
+  --bg: #f3efe8;
+  --ink: #24211d;
+  --muted: #6f685e;
+  --board: #ffffff;
+  --tube: #d9d2c5;
+  --font-display: 'Bagel Fat One', 'Arial Black', sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #171513;
+    --ink: #f1ece4;
+    --muted: #a9a196;
+    --board: #26231f;
+    --tube: #3a352e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #171513;
+  --ink: #f1ece4;
+  --muted: #a9a196;
+  --board: #26231f;
+  --tube: #3a352e;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 28px;
+}
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(40px, 11vw, 56px)/1 var(--font-display);
+  background: linear-gradient(90deg, #ef476f, #ffd166, #06d6a0, #118ab2, #7b5cd6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tag {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.tube {
+  height: 16px;
+  background: var(--tube);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.tube i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--ink);
+  transition: width 0.2s;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.board {
+  background: var(--board);
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(36, 33, 29, 0.12);
+}
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: 6px;
+}
+.pots {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.pot {
+  aspect-ratio: 1;
+  border-radius: 50% 50% 40% 40%;
+  border: 3px solid var(--board);
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-width: 0;
+}
+.pot:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.pot:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.pot kbd {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: 700 11px/1 var(--font-body);
+  color: rgba(255, 255, 255, 0.85);
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+button.ctl {
+  font: 600 14px/1 var(--font-body);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.ctl[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--bg);
+}
+button.ctl:focus-visible {
+  outline: 3px solid #ef476f;
+  outline-offset: 2px;
+}
+.msg {
+  min-height: 26px;
+  font: 400 22px/1.2 var(--font-display);
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a deep-teal lacquer board with pearl and coal discs; a score bar that tips toward the leader.
+     Light: a bright studio. Dark: the same set at night. */
+:root {
+  --bg: #e7efee;
+  --board: #0f4c4a;
+  --cell: #15625f;
+  --ink: #10201f;
+  --muted: #4f6967;
+  --pearl: #f6f1e7;
+  --coal: #1b1f22;
+  --hint: rgba(246, 241, 231, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0b1514;
+    --ink: #e4f0ee;
+    --muted: #8fb0ac;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b1514;
+  --ink: #e4f0ee;
+  --muted: #8fb0ac;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.disc {
+  transition:
+    transform 0.35s ease,
+    background-color 0.18s ease 0.1s;
+}
+
+.disc.flipping {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disc {
+    transition: none;
+  }
+}

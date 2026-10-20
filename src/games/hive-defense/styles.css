@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&family=Nunito+Sans:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a meadow map (12×8 cells) with a dirt path ending at the hive; honeycomb shop row and wave controls below.
+   Single theme: a midsummer meadow. */
+:root {
+  --bg: #2b2410;
+  --honey: #f5b301;
+  --comb: #ffd75e;
+  --ink: #fff6dc;
+  --muted: #cdbb8a;
+  --panel: #3a3116;
+  --red: #e2553f;
+  --font-display: 'Bevan', Georgia, serif;
+  --font-body: 'Nunito Sans', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    rgba(245, 179, 1, 0.06) 9px,
+    transparent 10px
+  );
+  background-size: 34px 30px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 26px;
+}
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(28px, 7vw, 40px)/1 var(--font-display);
+  color: var(--honey);
+}
+.tag {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.stats {
+  display: flex;
+  gap: 14px;
+}
+.stats span {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.stats b {
+  font: 400 20px/1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.map {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid var(--honey);
+}
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  max-width: 100%;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.shop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 8px;
+}
+.shop button {
+  font: 700 13px/1.25 var(--font-body);
+  padding: 9px 8px;
+  border-radius: 12px;
+  border: 2px solid var(--panel);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  min-width: 0;
+}
+.shop button b {
+  display: block;
+  font-size: 14px;
+}
+.shop button span {
+  color: var(--muted);
+  font-weight: 400;
+}
+.shop button[aria-pressed='true'] {
+  border-color: var(--honey);
+  background: #4a3e18;
+}
+.shop button:disabled {
+  opacity: 0.45;
+}
+.shop .wave {
+  background: var(--honey);
+  color: #2b2410;
+  border-color: var(--honey);
+  font: 400 15px/1.1 var(--font-display);
+  text-align: center;
+  padding: 9px 14px;
+}
+.shop .wave:disabled {
+  opacity: 0.5;
+}
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+@media (max-width: 560px) {
+  .shop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .shop .wave {
+    grid-column: 1/-1;
+  }
+}
+.over {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: rgba(43, 36, 16, 0.88);
+  padding: 16px;
+}
+.over h2 {
+  margin: 0 0 6px;
+  font: 400 28px/1.1 var(--font-display);
+  color: var(--honey);
+}
+.over p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  max-width: 44ch;
+}
+.btn {
+  font: 400 16px/1 var(--font-display);
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--honey);
+  color: #2b2410;
+  cursor: pointer;
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}

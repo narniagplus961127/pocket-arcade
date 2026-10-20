@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "heather": "var(--heather)",
+        "gold": "var(--gold)",
+        "card": "var(--card)",
+        "line": "var(--line)"
+      },
+      "fontFamily": {
+        "display": ["\"Uncial Antiqua\"", "Georgia", "serif"],
+        "body": ["\"Crimson Pro\"", "Georgia", "serif"]
+      }
+    }
+  }
+}

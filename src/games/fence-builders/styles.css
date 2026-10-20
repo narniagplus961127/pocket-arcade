@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Lexend+Deca:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a field seen from above with fence posts in a grid. Close a pen and your sheep move in.
+     Light: a spring meadow. Dark: the meadow at dusk. */
+:root {
+  --bg: #e9f1dc;
+  --field: #a8d27c;
+  --post: #6b4a2b;
+  --ink: #24331b;
+  --muted: #5d7150;
+  --mine: #2d6fd6;
+  --theirs: #d65a2d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #121a0e;
+    --field: #3f5c2c;
+    --post: #c9a273;
+    --ink: #e5f0da;
+    --muted: #9fb391;
+    --mine: #7aa9ff;
+    --theirs: #ff9a6e;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #121a0e;
+  --field: #3f5c2c;
+  --post: #c9a273;
+  --ink: #e5f0da;
+  --muted: #9fb391;
+  --mine: #7aa9ff;
+  --theirs: #ff9a6e;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

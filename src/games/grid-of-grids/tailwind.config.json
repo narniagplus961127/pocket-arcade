@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "paper": "var(--paper)",
+        "line": "var(--line)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "blue": "var(--blue)",
+        "red": "var(--red)",
+        "glow": "var(--glow)"
+      },
+      "fontFamily": {
+        "hand": ["\"Gochi Hand\"", "cursive"],
+        "body": ["Nunito", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

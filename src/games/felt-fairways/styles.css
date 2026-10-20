@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: one tabletop course board fitted to the screen, scorecard strip pinned to the top.
+   Single theme: a clubhouse green that reads the same day or night. */
+:root {
+  --room: #14321f;
+  --felt: #2f7a4a;
+  --wood: #8a5a35;
+  --chalk: #f3f0e4;
+  --muted: #a9c5ae;
+  --flag: #e8483b;
+  --gold: #f2c14e;
+  --font-display: 'Archivo Black', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'Archivo', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--room);
+  color: var(--chalk);
+}
+body {
+  font-family: var(--font-body);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 10px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.hole {
+  font: 400 22px/1 var(--font-display);
+  letter-spacing: 0.02em;
+}
+.hole small {
+  display: block;
+  font: 600 11px/1.4 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.strokes {
+  text-align: right;
+  font: 400 22px/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.strokes small {
+  display: block;
+  font: 600 11px/1.4 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: rgba(10, 30, 18, 0.55);
+}
+.card {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  background: var(--chalk);
+  color: #1d2a20;
+  padding: 24px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+.eyebrow {
+  margin: 0;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--felt);
+}
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(42px, 12vw, 56px);
+  color: var(--felt);
+}
+h2 {
+  font-size: 34px;
+}
+p {
+  margin: 0;
+  line-height: 1.55;
+}
+.verdict {
+  font: 400 22px/1 var(--font-display);
+  color: var(--flag);
+}
+.sc {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+th,
+td {
+  border: 1px solid #c9c3ad;
+  padding: 5px 4px;
+  text-align: center;
+  min-width: 22px;
+}
+th {
+  font-weight: 700;
+  background: #e6e1cf;
+}
+td.under {
+  color: #1f7a45;
+  font-weight: 700;
+}
+td.over {
+  color: #b5372c;
+  font-weight: 700;
+}
+.btn {
+  align-self: flex-start;
+  font: 400 17px/1 var(--font-display);
+  padding: 14px 22px;
+  background: var(--felt);
+  color: var(--chalk);
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}

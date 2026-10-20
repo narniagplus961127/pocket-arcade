@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Andika:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a storybook page. A painted sky strip with rolling hills and the farmhouse tells the time of day;
+     below it the vegetable patch (left) and the seed bag, barn and village market (right, below on phones).
+     Light: a spring meadow page. Dark: the same book read by lamplight. */
+:root {
+  --bg: #eaf3dc;
+  --card: #fffef6;
+  --ink: #2f3a1f;
+  --muted: #6b7553;
+  --meadow: #4f8f3a;
+  --barn: #c8453a;
+  --hay: #f2c14e;
+  --line: #d6dfc2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #152016;
+    --card: #1f2c1f;
+    --ink: #eef2dc;
+    --muted: #a5b28d;
+    --meadow: #7cc061;
+    --barn: #e0675b;
+    --hay: #f5cc66;
+    --line: #34452f;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #152016;
+  --card: #1f2c1f;
+  --ink: #eef2dc;
+  --muted: #a5b28d;
+  --meadow: #7cc061;
+  --barn: #e0675b;
+  --hay: #f5cc66;
+  --line: #34452f;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Soil furrows */
+.soil {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.09) 0 3px,
+    transparent 3px 11px
+  );
+}
+
+@keyframes crow-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(4deg);
+  }
+}
+
+.crow-bob {
+  animation: crow-bob 0.5s ease-in-out infinite;
+}
+
+@keyframes ripe-wiggle {
+  0%,
+  92%,
+  100% {
+    transform: rotate(0);
+  }
+  95% {
+    transform: rotate(-4deg);
+  }
+  97% {
+    transform: rotate(4deg);
+  }
+}
+
+.ripe-wiggle {
+  animation: ripe-wiggle 2.4s ease-in-out infinite;
+  transform-origin: 50% 85%;
+}

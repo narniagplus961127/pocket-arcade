@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "panel": "var(--panel)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "brass": "var(--brass)",
+        "enamel": "var(--enamel)",
+        "alarm": "var(--alarm)"
+      },
+      "fontFamily": {
+        "display": ["\"Poiret One\"", "Georgia", "serif"],
+        "mono": ["\"Cutive Mono\"", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

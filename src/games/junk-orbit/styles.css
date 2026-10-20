@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a blueprint sheet as the playfield, title block in the corner like an engineering drawing, touch controls at the bottom edge.
+   Single blueprint theme on purpose. */
+:root {
+  --blue: #0f3b5c;
+  --line: #e8f3ff;
+  --grid: rgba(232, 243, 255, 0.07);
+  --muted: #9cc3e6;
+  --warn: #ffcf5c;
+  --font: 'Space Mono', ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--blue);
+  color: var(--line);
+}
+body {
+  font-family: var(--font);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.block {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  border: 1.5px solid var(--line);
+  font-size: 11px;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  background: rgba(15, 59, 92, 0.7);
+}
+.block div {
+  padding: 5px 9px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.block div:nth-child(2n) {
+  border-right: 0;
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.block div:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+.touch {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  display: flex;
+  justify-content: space-between;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.touch div {
+  display: flex;
+  gap: 8px;
+}
+.touch button {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: rgba(232, 243, 255, 0.08);
+  color: var(--line);
+  font: 700 12px/1 var(--font);
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .touch {
+    display: none;
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.card {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--line);
+  background: rgba(15, 59, 92, 0.92);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dwg {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0;
+}
+h1,
+h2 {
+  margin: 0;
+  font: 700 clamp(34px, 9vw, 46px)/1 var(--font);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+h2 {
+  font-size: 30px;
+}
+p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.spec {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  font-size: 13px;
+}
+.spec b {
+  color: var(--warn);
+  font-weight: 700;
+}
+.btn {
+  align-self: flex-start;
+  font: 700 15px/1 var(--font);
+  letter-spacing: 0.1em;
+  padding: 12px 18px;
+  border: 1.5px solid var(--line);
+  background: var(--line);
+  color: var(--blue);
+  cursor: pointer;
+}
+.btn:focus-visible,
+.touch button:focus-visible {
+  outline: 3px solid var(--warn);
+  outline-offset: 3px;
+}

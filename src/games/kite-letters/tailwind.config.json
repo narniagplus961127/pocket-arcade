@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "sky": "var(--sky)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "kite": "var(--kite)",
+        "ribbon": "var(--ribbon)",
+        "good": "var(--good)",
+        "bad": "var(--bad)"
+      },
+      "fontFamily": {
+        "hand": ["\"Patrick Hand\"", "cursive"],
+        "body": ["Commissioner", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "lot": "var(--lot)",
+        "line": "var(--line)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "hero": "var(--hero)"
+      },
+      "fontFamily": {
+        "display": ["\"Racing Sans One\"", "Impact", "sans-serif"],
+        "body": ["\"Red Hat Display\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

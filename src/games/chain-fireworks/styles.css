@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Murecho:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: the night sky above a festival harbour. Unlit shells drift over the water, paper lanterns hang along
+     the pier, and the show's programme (level, target, lanterns left) sits above. Single theme: ink-dark night
+     with lantern vermilion and gold; the fireworks bring the colour. */
+:root {
+  --bg: #060f16;
+  --ink: #f6ecd9;
+  --muted: #93a6aa;
+  --lantern: #ff5a36;
+  --gold: #ffcc4d;
+  --card: rgba(6, 15, 22, 0.86);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #03080d 0%, var(--bg) 60%, #0d1a1f 100%);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

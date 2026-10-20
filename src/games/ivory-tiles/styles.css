@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Gelasio:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: the inside of a concert grand. A black lacquer page with a gold rule, the programme (piece name)
+     printed above an ivory keyboard of four lanes that scrolls towards you.
+     Single theme: black lacquer and ivory, so color-scheme is dark. */
+:root {
+  --bg: #0d0c0b;
+  --ivory: #f3ead6;
+  --ink: #efe6d2;
+  --muted: #a8997c;
+  --gold: #c9a45c;
+  --card: rgba(13, 12, 11, 0.9);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

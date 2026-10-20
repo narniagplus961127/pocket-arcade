@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "awning": "var(--awning)",
+        "leaf": "var(--leaf)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Lemon", "Georgia", "serif"],
+        "body": ["Itim", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Delius&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a farmyard at first light. Hens sit on a wooden perch across the top, the sun climbs behind the barn
+     and the basket slides along the grass. Score and cracked-egg counter above the scene.
+     Single theme: a warm peach sunrise, so color-scheme stays light. */
+:root {
+  --bg: #fbd3ab;
+  --ink: #3a1f17;
+  --muted: #7b4c3a;
+  --barn: #b8352b;
+  --yolk: #f5a623;
+  --card: rgba(255, 240, 222, 0.93);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: linear-gradient(180deg, #f7b9a0 0%, #fbd3ab 40%, #fde6c4 100%);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

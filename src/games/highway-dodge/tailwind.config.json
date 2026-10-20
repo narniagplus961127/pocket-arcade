@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "sun": "var(--sun)",
+        "teal": "var(--teal)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Goldman", "system-ui", "sans-serif"],
+        "body": ["\"Asap Condensed\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

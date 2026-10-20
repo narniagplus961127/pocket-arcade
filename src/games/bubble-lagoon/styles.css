@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Varela+Round&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a tall window into a shallow lagoon. Sea-glass bubbles cling to the reef at the top, a coral line marks
+     the danger depth, and the shell launcher sits on the sand below. Single theme: a bright sunny lagoon with
+     turquoise water, sand, coral pink and frosted sea glass. */
+:root {
+  --bg: #def3ee;
+  --ink: #0c4250;
+  --muted: #4c7c84;
+  --coral: #ff6b5e;
+  --glass: #6fd3a4;
+  --deep: #146f86;
+  --card: rgba(222, 243, 238, 0.93);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #c9eee7 0%, var(--bg) 45%, #f4e7c8 100%);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

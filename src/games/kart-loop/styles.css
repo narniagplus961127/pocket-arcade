@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Barlow:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a top-down circuit seen from a camera that follows the kart; lap timer tower at the top right, touch pedals at the bottom.
+   Single theme: a sunny kart track. */
+:root {
+  --grass: #5aa34a;
+  --asphalt: #4a4d55;
+  --curb-r: #e63946;
+  --ink: #ffffff;
+  --muted: #c9d3c4;
+  --yellow: #ffd23f;
+  --font-display: 'Russo One', Impact, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--grass);
+  color: var(--ink);
+}
+body {
+  font-family: var(--font-body);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tower {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  top: calc(env(safe-area-inset-top, 0px) + 10px);
+  background: rgba(20, 22, 28, 0.85);
+  border-radius: 8px;
+  padding: 8px 12px;
+  pointer-events: none;
+  min-width: 140px;
+}
+.tower div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font: 700 13px/1.6 var(--font-body);
+}
+.tower b {
+  font: 400 15px/1.6 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.tower .k {
+  color: var(--muted);
+}
+.big {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30%;
+  text-align: center;
+  font: 400 clamp(40px, 12vw, 90px)/1 var(--font-display);
+  color: var(--yellow);
+  text-shadow: 0 4px 0 #14161c;
+  pointer-events: none;
+}
+.pedals {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  display: flex;
+  justify-content: space-between;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.pedals div {
+  display: flex;
+  gap: 10px;
+}
+.pedals button {
+  width: 66px;
+  height: 66px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(20, 22, 28, 0.45);
+  color: #fff;
+  font: 400 14px/1 var(--font-display);
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pedals {
+    display: none;
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: rgba(20, 22, 28, 0.45);
+}
+.card {
+  width: 100%;
+  max-width: 410px;
+  box-sizing: border-box;
+  background: #14161c;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 8px solid;
+  border-image: repeating-linear-gradient(90deg, #fff 0 14px, #14161c 14px 28px) 8;
+}
+h1,
+h2 {
+  margin: 0;
+  font: 400 clamp(40px, 11vw, 54px)/1 var(--font-display);
+  color: var(--yellow);
+  text-wrap: balance;
+}
+h2 {
+  font-size: 34px;
+}
+p {
+  margin: 0;
+  line-height: 1.55;
+}
+.btn {
+  align-self: flex-start;
+  font: 400 18px/1 var(--font-display);
+  padding: 13px 22px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--yellow);
+  color: #14161c;
+  cursor: pointer;
+}
+.btn:focus-visible,
+.pedals button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}

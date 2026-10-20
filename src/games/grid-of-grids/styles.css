@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a page torn from a school notebook. Nine small boards drawn in pencil inside one big board;
+     blue ballpoint for you, red pen for the teacher. Light: daytime desk. Dark: a desk lamp at night. */
+:root {
+  --paper: #fbfaf4;
+  --line: #c9d6ea;
+  --ink: #22283a;
+  --muted: #6a7088;
+  --blue: #2457c5;
+  --red: #d2382f;
+  --glow: #fff2a8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #1b1e27;
+    --line: #2f3a52;
+    --ink: #e8ebf3;
+    --muted: #9aa2bb;
+    --blue: #7aa5ff;
+    --red: #ff7b6e;
+    --glow: #4a4520;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #1b1e27;
+  --line: #2f3a52;
+  --ink: #e8ebf3;
+  --muted: #9aa2bb;
+  --blue: #7aa5ff;
+  --red: #ff7b6e;
+  --glow: #4a4520;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(transparent 0 27px, var(--line) 27px 28px);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

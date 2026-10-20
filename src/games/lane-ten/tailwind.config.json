@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "mustard": "var(--mustard)",
+        "cherry": "var(--cherry)",
+        "sheet": "var(--sheet)",
+        "sheetInk": "var(--sheet-ink)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Yellowtail", "cursive"],
+        "body": ["Oswald", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "sheet": "var(--sheet)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "green": "var(--green)",
+        "brass": "var(--brass)",
+        "right": "var(--right)",
+        "wrong": "var(--wrong)"
+      },
+      "fontFamily": {
+        "display": ["Gloock", "Georgia", "serif"],
+        "body": ["Figtree", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "mat": "var(--mat)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "thread": "var(--thread)"
+      },
+      "fontFamily": {
+        "display": ["Gluten", "system-ui", "sans-serif"],
+        "body": ["Hind", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

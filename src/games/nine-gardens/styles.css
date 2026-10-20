@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a walled garden of nine beds (the 3×3 boxes); seed packets (number pad) below.
+     Light: a summer kitchen garden. Dark: the same garden by moonlight. */
+:root {
+  --bg: #eef1e6;
+  --ink: #24301f;
+  --muted: #66735d;
+  --bed: #fbfcf7;
+  --soil: #d9dccb;
+  --leaf: #4c7a3d;
+  --bloom: #c4513a;
+  --given: #24301f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #131810;
+    --ink: #e7eedf;
+    --muted: #9aab8d;
+    --bed: #1c2318;
+    --soil: #2e3828;
+    --leaf: #8cc06f;
+    --bloom: #ff8a6e;
+    --given: #f2f6ec;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #131810;
+  --ink: #e7eedf;
+  --muted: #9aab8d;
+  --bed: #1c2318;
+  --soil: #2e3828;
+  --leaf: #8cc06f;
+  --bloom: #ff8a6e;
+  --given: #f2f6ec;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

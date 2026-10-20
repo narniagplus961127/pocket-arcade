@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "light": "var(--light-sq)",
+        "dark": "var(--dark-sq)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "banner": "var(--banner)",
+        "gold": "var(--gold)"
+      },
+      "fontFamily": {
+        "display": ["MedievalSharp", "Georgia", "serif"],
+        "body": ["\"Crimson Pro\"", "Georgia", "serif"]
+      }
+    }
+  }
+}

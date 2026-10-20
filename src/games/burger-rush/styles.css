@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a diner pass-through. Order tickets clip to a rail at the top, the burger builds on the plate in the middle, and ingredient bins sit along the counter.
+   Single theme: a mint-and-cherry 1950s diner. */
+:root {
+  --mint: #bfe8d6;
+  --cherry: #d7263d;
+  --chrome: #e6e9ee;
+  --counter: #2c3e50;
+  --ink: #1f2a33;
+  --muted: #5b6b78;
+  --ticket: #fffdf3;
+  --font-display: 'Luckiest Guy', 'Arial Black', sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+  color-scheme: light;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--mint);
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.35) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.35) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.35) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.35) 75%
+    );
+  background-size: 40px 40px;
+  background-position:
+    0 0,
+    20px 20px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 14px 24px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(30px, 8vw, 44px)/1 var(--font-display);
+  color: var(--cherry);
+  text-shadow: 2px 2px 0 #fff;
+}
+.stats {
+  display: flex;
+  gap: 8px;
+}
+.stat {
+  background: var(--counter);
+  color: #fff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  text-align: center;
+  min-width: 56px;
+}
+.stat span {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.stat b {
+  font: 400 20px/1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  min-height: 150px;
+  background: var(--chrome);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: inset 0 3px 0 #c9ced6;
+}
+.ticket {
+  background: var(--ticket);
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  position: relative;
+  border-top: 6px solid var(--cherry);
+  min-width: 0;
+}
+.ticket.active {
+  outline: 3px solid var(--cherry);
+}
+.ticket .who {
+  font: 400 14px/1 var(--font-display);
+  color: var(--muted);
+}
+.ticket ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+}
+.ticket li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ticket li.done {
+  opacity: 0.35;
+  text-decoration: line-through;
+}
+.sw {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex: none;
+}
+.pat {
+  height: 6px;
+  border-radius: 3px;
+  background: #ddd;
+  overflow: hidden;
+  margin-top: auto;
+}
+.pat i {
+  display: block;
+  height: 100%;
+  background: #2bb673;
+  transition: width 0.2s linear;
+}
+.empty {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  border: 2px dashed #c9ced6;
+  border-radius: 4px;
+}
+.plate {
+  height: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding-bottom: 24px;
+}
+.plate::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  width: 240px;
+  max-width: 80%;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 0 #c9ced6;
+}
+.layer {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  animation: land 0.18s ease-out;
+}
+@keyframes land {
+  from {
+    transform: translateY(-30px);
+    opacity: 0.3;
+  }
+}
+.bins {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background: var(--counter);
+  padding: 10px;
+  border-radius: 14px;
+}
+.bin {
+  border: 0;
+  border-radius: 10px;
+  background: #3d5468;
+  color: #fff;
+  font: 800 13px/1.2 var(--font-body);
+  padding: 10px 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.bin:active {
+  transform: translateY(2px);
+}
+.bin:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #ffd23f;
+  outline-offset: 2px;
+}
+.bin kbd {
+  font: 700 10px/1 var(--font-body);
+  opacity: 0.6;
+}
+.chip {
+  width: 46px;
+  height: 14px;
+  border-radius: 7px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  font: 400 18px/1 var(--font-display);
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--cherry);
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+.btn.ghost {
+  background: #fff;
+  color: var(--cherry);
+}
+.msg {
+  min-height: 22px;
+  font-weight: 800;
+  text-align: center;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(31, 42, 51, 0.55);
+  padding: 20px;
+  overflow-y: auto;
+}
+.card {
+  max-width: 400px;
+  background: var(--ticket);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 10px solid var(--cherry);
+}
+.card h2 {
+  margin: 0;
+  font: 400 38px/1 var(--font-display);
+  color: var(--cherry);
+}
+.card p {
+  margin: 0;
+  line-height: 1.55;
+}

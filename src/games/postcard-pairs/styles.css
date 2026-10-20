@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a travel scrapbook page. Postage-stamp cards in a grid, airmail-striped header, stats as luggage tags.
+   Light: scrapbook paper. Dark: the album under a desk lamp. */
+:root {
+  --bg: #dfe9ec;
+  --card-back: #24557a;
+  --card-face: #fffaf0;
+  --red: #d6453d;
+  --blue: #24557a;
+  --ink: #1d2a33;
+  --muted: #5a6b76;
+  --tag: #f6e7c8;
+  --font-display: 'Abril Fatface', Georgia, serif;
+  --font-body: 'Josefin Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #121a20;
+    --card-back: #2f6a96;
+    --card-face: #f4ecd9;
+    --ink: #e9eef2;
+    --muted: #9fb1bd;
+    --tag: #3a3222;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #121a20;
+  --card-back: #2f6a96;
+  --card-face: #f4ecd9;
+  --ink: #e9eef2;
+  --muted: #9fb1bd;
+  --tag: #3a3222;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 28px;
+}
+main {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.airmail {
+  height: 8px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--red) 0 12px,
+    transparent 12px 24px,
+    var(--blue) 24px 36px,
+    transparent 36px 48px
+  );
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(36px, 10vw, 50px)/1 var(--font-display);
+  text-wrap: balance;
+}
+.tag-line {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lt {
+  background: var(--tag);
+  border-radius: 4px 14px 14px 4px;
+  padding: 7px 14px 7px 22px;
+  position: relative;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.lt::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bg);
+  transform: translateY(-50%);
+}
+.lt span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 6px;
+}
+.grid {
+  display: grid;
+  gap: 8px;
+}
+.card {
+  aspect-ratio: 3/4;
+  perspective: 600px;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  min-width: 0;
+}
+.card:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s;
+  transform-style: preserve-3d;
+}
+.card.flip .inner,
+.card.done .inner {
+  transform: rotateY(180deg);
+}
+.side {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+}
+.back {
+  background: var(--card-back);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 1.5px,
+    transparent 2px
+  );
+  background-size: 10px 10px;
+  -webkit-mask: radial-gradient(circle 4px at 0 0, #0000 98%, #000) -4px -4px/12px 12px
+    round;
+  mask: radial-gradient(circle 4px at 0 0, #0000 98%, #000) -4px -4px/12px 12px round;
+}
+.face {
+  background: var(--card-face);
+  transform: rotateY(180deg);
+  border: 3px solid var(--card-face);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+.face svg {
+  width: 72%;
+  height: 72%;
+}
+.card.done .face {
+  box-shadow: inset 0 0 0 3px var(--red);
+}
+.sizes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+button.ctl {
+  font: 700 14px/1 var(--font-body);
+  padding: 11px 15px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.ctl:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+.msg {
+  min-height: 28px;
+  font: 400 22px/1.2 var(--font-display);
+  color: var(--red);
+}
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition: none;
+  }
+}

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: diner counter scene on canvas, giant stack count at top, ticket-style cards.
+   Single bright theme: it's always breakfast time. */
+:root {
+  --wall: #bfe3f0;
+  --ink: #2b2140;
+  --muted: #5b6b86;
+  --butter: #ffd84d;
+  --batter: #f2a93b;
+  --berry: #e2456b;
+  --ticket: #fffdf6;
+  --font-display: 'Lilita One', 'Arial Rounded MT Bold', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+  color-scheme: light;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--wall);
+  color: var(--ink);
+}
+body {
+  font-family: var(--font-body);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+.hud {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(env(safe-area-inset-top, 0px) + 18px);
+  text-align: center;
+  pointer-events: none;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.count {
+  font: 400 64px/1 var(--font-display);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.sub {
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.perfect {
+  display: inline-block;
+  margin-top: 8px;
+  font: 400 18px/1 var(--font-display);
+  color: #fff;
+  background: var(--berry);
+  padding: 7px 12px;
+  border-radius: 999px;
+  transform: rotate(-3deg);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: rgba(43, 33, 64, 0.25);
+}
+.card {
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+  background: var(--ticket);
+  padding: 26px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 18px 40px rgba(43, 33, 64, 0.25);
+  border-radius: 4px;
+  -webkit-mask: radial-gradient(circle 7px at 50% 0, #0000 98%, #000) 0 0/18px 100%
+    repeat-x;
+  mask: radial-gradient(circle 7px at 50% 0, #0000 98%, #000) 0 0/18px 100% repeat-x;
+}
+.order {
+  margin: 0;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--berry);
+}
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(48px, 14vw, 62px);
+  color: var(--batter);
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+}
+h2 {
+  font-size: 40px;
+}
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+.dash {
+  border: 0;
+  border-top: 2px dashed #d9cdb5;
+  margin: 2px 0;
+  width: 100%;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+.line span:last-child {
+  font-variant-numeric: tabular-nums;
+}
+.btn {
+  font: 400 22px/1 var(--font-display);
+  padding: 14px 22px;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: var(--butter);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 5px 0 var(--ink);
+}
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--berry);
+  outline-offset: 3px;
+}

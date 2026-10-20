@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Red+Hat+Display:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a cramped car park seen from above. 6×6 bays, an exit gap on the right wall of the third row,
+     and the red car that needs to get out. Light: daytime car park. Dark: the same car park at night. */
+:root {
+  --bg: #e7e8e3;
+  --lot: #4b4f57;
+  --line: #f2d14b;
+  --ink: #1d2026;
+  --muted: #5f646d;
+  --hero: #e23d3d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #101114;
+    --lot: #2b2e35;
+    --ink: #eceef2;
+    --muted: #a0a5ae;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #101114;
+  --lot: #2b2e35;
+  --ink: #eceef2;
+  --muted: #a0a5ae;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

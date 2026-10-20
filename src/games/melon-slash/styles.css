@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Itim&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a market stall at noon. A striped awning hangs over a big wooden chopping board; fruit is tossed up
+     from below and you slice it mid-air. Score and misses sit above the board.
+     Single theme: bright summer daylight, so color-scheme stays light. */
+:root {
+  --bg: #ffd65c;
+  --ink: #3b2412;
+  --muted: #7a5326;
+  --awning: #d9382b;
+  --leaf: #3d8a3a;
+  --card: rgba(255, 246, 224, 0.93);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: radial-gradient(circle at 85% -10%, #fff3b0 0, transparent 45%);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

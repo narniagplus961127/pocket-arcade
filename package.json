@@ -1,0 +1,39 @@
+{
+  "name": "pocket-arcade",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "predev": "node scripts/build-game-styles.mjs",
+    "prebuild": "node scripts/build-game-styles.mjs",
+    "verify": "node scripts/verify-build.mjs",
+    "format": "prettier --write . && node scripts/check-line-endings.mjs --write",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.games.json",
+    "test": "node --test tests/*.test.mjs && node scripts/check-game-renders.mjs",
+    "check:crlf": "node scripts/check-line-endings.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.28.2",
+    "postcss": "^8.5.6",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

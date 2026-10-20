@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&family=Oswald:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a classic paper scoresheet across the top, the polished lane below it, and the current step's
+     instruction plus a big lock button. On wide screens the lane sits beside the controls.
+     Single theme: a 1960s alley after dark, deep teal carpet, mustard signage and cherry-red accents. */
+:root {
+  --bg: #0f2b2f;
+  --ink: #f6efe0;
+  --muted: #9fbab6;
+  --mustard: #f2b134;
+  --cherry: #d6334a;
+  --sheet: #f7f3e8;
+  --sheet-ink: #1d2b2d;
+  --card: rgba(15, 43, 47, 0.94);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.025) 0 10px,
+      transparent 10px 20px
+    ),
+    var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Commissioner:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a breezy sky with a kite whose tail has six ribbons; the hidden word written on a card below,
+     and a letter keyboard. Each wrong letter snips a ribbon. Light: blue sky. Dark: a twilight sky. */
+:root {
+  --sky: #d8ecfa;
+  --card: #ffffff;
+  --ink: #1d2c3d;
+  --muted: #5d7186;
+  --kite: #ef5b4c;
+  --ribbon: #f6b93b;
+  --good: #2f9e6a;
+  --bad: #c2453a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --sky: #141c2e;
+    --card: #1e283d;
+    --ink: #e7eef8;
+    --muted: #9aaac0;
+    --good: #57c792;
+    --bad: #ff7d70;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --sky: #141c2e;
+  --card: #1e283d;
+  --ink: #e7eef8;
+  --muted: #9aaac0;
+  --good: #57c792;
+  --bad: #ff7d70;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--sky);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-4deg) translateY(0);
+  }
+  50% {
+    transform: rotate(4deg) translateY(-6px);
+  }
+}
+
+.kite-sway {
+  animation: sway 3.2s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(160px) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+.ribbon-gone {
+  animation: fall 0.9s ease-in forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kite-sway {
+    animation: none;
+  }
+}

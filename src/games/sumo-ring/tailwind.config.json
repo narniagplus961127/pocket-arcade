@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "murasaki": "var(--murasaki)",
+        "straw": "var(--straw)",
+        "clay": "var(--clay)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["\"Yuji Syuku\"", "Georgia", "serif"],
+        "body": ["\"BIZ UDPGothic\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

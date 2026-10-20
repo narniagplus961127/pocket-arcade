@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&family=Mali:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a wide window into the rainforest canopy. Vine knots hang from branches along the top, a lazy river
+     runs along the bottom, and the score sits above like a carved sign. Single theme: deep green shade under the
+     leaves, lit by banana yellow and river teal. */
+:root {
+  --bg: #0e2318;
+  --canopy: #1b3f28;
+  --ink: #eef5d6;
+  --muted: #a7c49a;
+  --banana: #ffd447;
+  --river: #3bb3a0;
+  --card: rgba(9, 28, 18, 0.9);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% -10%, #24563a, var(--bg) 65%);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

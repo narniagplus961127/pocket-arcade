@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "canopy": "var(--canopy)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "banana": "var(--banana)",
+        "river": "var(--river)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Margarine", "Georgia", "cursive"],
+        "body": ["Mali", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

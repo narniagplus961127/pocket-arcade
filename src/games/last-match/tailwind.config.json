@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "label": "var(--label)",
+        "red": "var(--red)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "wood": "var(--wood)"
+      },
+      "fontFamily": {
+        "display": ["\"Alfa Slab One\"", "Georgia", "serif"],
+        "body": ["\"Libre Franklin\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Pro:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a heraldic tapestry. The chessboard is woven into the centre, with a crimson banner title and the rules
+     embroidered beneath. Single theme: castle hall tapestry. */
+:root {
+  --bg: #2b1414;
+  --light-sq: #e9d9b4;
+  --dark-sq: #7d5a3a;
+  --ink: #f4e6c8;
+  --muted: #c9ae86;
+  --banner: #9c1f2b;
+  --gold: #e3b04b;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(227, 176, 75, 0.08) 2px, transparent 3px),
+    radial-gradient(circle at 30px 30px, rgba(227, 176, 75, 0.05) 2px, transparent 3px);
+  background-size: 40px 40px;
+  min-height: 100vh;
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

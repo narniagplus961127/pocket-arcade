@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "tent": "var(--tent)",
+        "velvet": "var(--velvet)",
+        "gold": "var(--gold)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "orb": "var(--orb)"
+      },
+      "fontFamily": {
+        "display": ["\"Berkshire Swash\"", "Georgia", "serif"],
+        "body": ["Signika", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

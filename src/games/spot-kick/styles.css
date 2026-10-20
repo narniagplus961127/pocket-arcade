@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Manrope:wght@500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a stadium scoreboard strip on top, then the goal seen from the penalty spot under floodlights.
+     Dive buttons appear beneath the goal when you are in goal. Single theme: a night match,
+     near-black sky, warm floodlight haze, a striped pitch and a signal-orange home kit. */
+:root {
+  --bg: #070b16;
+  --ink: #eef3ff;
+  --muted: #8b97b3;
+  --signal: #ff7a1a;
+  --flood: #fff3c4;
+  --panel: #111a2e;
+  --card: rgba(7, 11, 22, 0.9);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(255, 243, 196, 0.12), transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a greenhouse bed. Header with level and moves, square planter grid centered, controls underneath.
+   Light and dark both read as a garden: daylight greenhouse and moonlit greenhouse. */
+:root {
+  --bg: #e6efe2;
+  --bed: #6b4f3a;
+  --soil: #7d5c43;
+  --leaf: #3f7d4e;
+  --ink: #1f3324;
+  --muted: #5d7663;
+  --petal: #f27a9b;
+  --petal-2: #ffd3df;
+  --core: #ffcc4d;
+  --panel: #f6faf3;
+  --font-display: 'Caprasimo', 'Cooper Black', Georgia, serif;
+  --font-body: 'Figtree', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #111c16;
+    --bed: #3a2b22;
+    --soil: #4a372b;
+    --leaf: #6fbf86;
+    --ink: #e3efe5;
+    --muted: #93ae9a;
+    --petal: #ff8fb0;
+    --petal-2: #ffc8d8;
+    --core: #ffd66b;
+    --panel: #1a2820;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #111c16;
+  --bed: #3a2b22;
+  --soil: #4a372b;
+  --leaf: #6fbf86;
+  --ink: #e3efe5;
+  --muted: #93ae9a;
+  --petal: #ff8fb0;
+  --petal-2: #ffc8d8;
+  --core: #ffd66b;
+  --panel: #1a2820;
+  color-scheme: dark;
+}
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+  background-image: radial-gradient(
+    circle at 20% 0%,
+    color-mix(in srgb, var(--leaf) 14%, transparent),
+    transparent 50%
+  );
+}
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(36px, 10vw, 48px)/1 var(--font-display);
+  color: var(--leaf);
+  text-wrap: balance;
+}
+.tag {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.meta {
+  display: flex;
+  gap: 18px;
+}
+.meta div {
+  text-align: right;
+}
+.label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.val {
+  font: 400 26px/1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.bed {
+  background: var(--bed);
+  padding: 12px;
+  border-radius: 18px;
+  box-shadow:
+    inset 0 -6px 0 rgba(0, 0, 0, 0.2),
+    0 14px 30px rgba(31, 51, 36, 0.18);
+}
+.grid {
+  display: grid;
+  gap: 8px;
+  aspect-ratio: 1;
+  max-width: 100%;
+}
+.cell {
+  position: relative;
+  border: 0;
+  padding: 0;
+  border-radius: 12px;
+  background: var(--soil);
+  cursor: pointer;
+  box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.18);
+  min-width: 0;
+}
+.cell:focus-visible {
+  outline: 3px solid var(--core);
+  outline-offset: 2px;
+}
+.cell.hint {
+  animation: hint 1s ease-in-out infinite;
+}
+@keyframes hint {
+  50% {
+    box-shadow: inset 0 0 0 4px var(--core);
+  }
+}
+.flower {
+  position: absolute;
+  inset: 14%;
+  display: grid;
+  place-items: center;
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.petals {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 18%, var(--petal) 0 17%, transparent 18%),
+    radial-gradient(circle at 82% 50%, var(--petal) 0 17%, transparent 18%),
+    radial-gradient(circle at 50% 82%, var(--petal) 0 17%, transparent 18%),
+    radial-gradient(circle at 18% 50%, var(--petal) 0 17%, transparent 18%),
+    radial-gradient(circle at 27% 27%, var(--petal-2) 0 15%, transparent 16%),
+    radial-gradient(circle at 73% 27%, var(--petal-2) 0 15%, transparent 16%),
+    radial-gradient(circle at 73% 73%, var(--petal-2) 0 15%, transparent 16%),
+    radial-gradient(circle at 27% 73%, var(--petal-2) 0 15%, transparent 16%);
+  transition:
+    transform 0.45s cubic-bezier(0.3, 1.5, 0.5, 1),
+    opacity 0.3s;
+}
+.core {
+  position: relative;
+  width: 26%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--core);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--core) 40%, transparent);
+}
+.bud {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 0.7;
+  border-radius: 50% 50% 45% 45%;
+  background: var(--leaf);
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+.cell[data-on='0'] .petals {
+  transform: scale(0.2) rotate(-60deg);
+  opacity: 0;
+}
+.cell[data-on='0'] .core {
+  transform: scale(0);
+}
+.cell[data-on='1'] .bud {
+  transform: scale(0);
+  opacity: 0;
+}
+.cell[data-on='1'] {
+  background: color-mix(in srgb, var(--soil) 80%, var(--leaf));
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+button.ctl {
+  font: 600 15px/1 var(--font-body);
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--leaf);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.ctl.primary {
+  background: var(--leaf);
+  color: var(--panel);
+}
+button.ctl:focus-visible {
+  outline: 3px solid var(--core);
+  outline-offset: 2px;
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 15px;
+  max-width: 60ch;
+}
+.win {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid color-mix(in srgb, var(--leaf) 30%, transparent);
+}
+.win h2 {
+  margin: 0;
+  font: 400 28px/1.1 var(--font-display);
+  color: var(--leaf);
+}
+.stars {
+  font-size: 28px;
+  letter-spacing: 0.1em;
+  color: var(--core);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flower,
+  .petals,
+  .bud {
+    transition: none;
+  }
+  .cell.hint {
+    animation: none;
+    box-shadow: inset 0 0 0 4px var(--core);
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "brass": "var(--brass)",
+        "chalk": "var(--chalk)",
+        "slate": "var(--slate)",
+        "cork": "var(--cork)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Fraunces", "Georgia", "serif"],
+        "chalk": ["Kalam", "cursive"]
+      }
+    }
+  }
+}

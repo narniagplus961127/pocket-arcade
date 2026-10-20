@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "room": "var(--room)",
+        "wood": "var(--wood)",
+        "light": "var(--light-sq)",
+        "dark": "var(--dark-sq)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "brass": "var(--brass)"
+      },
+      "fontFamily": {
+        "display": ["\"Libre Baskerville\"", "Georgia", "serif"],
+        "body": ["Karla", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

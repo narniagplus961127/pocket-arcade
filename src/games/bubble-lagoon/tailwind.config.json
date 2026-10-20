@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "coral": "var(--coral)",
+        "glass": "var(--glass)",
+        "deep": "var(--deep)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["\"Leckerli One\"", "Georgia", "cursive"],
+        "body": ["\"Varela Round\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "dusk": "var(--dusk)",
+        "sky": "var(--sky)",
+        "sand": "var(--sand)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "gold": "var(--gold)"
+      },
+      "fontFamily": {
+        "display": ["Federo", "Georgia", "serif"],
+        "body": ["Sora", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

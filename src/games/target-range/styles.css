@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a Swiss-style training sheet. Stats ruled across the top, a gridded field where targets appear,
+     and a results table. Light: white paper. Dark: graphite. */
+:root {
+  --bg: #f5f5f2;
+  --field: #ffffff;
+  --ink: #111111;
+  --muted: #707070;
+  --signal: #ff3d00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #121212;
+    --field: #1b1b1b;
+    --ink: #f0f0f0;
+    --muted: #9a9a9a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #121212;
+  --field: #1b1b1b;
+  --ink: #f0f0f0;
+  --muted: #9a9a9a;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

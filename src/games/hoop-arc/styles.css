@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Barlow:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: side view of an empty gym, with hardwood floor, hoop on the right, and a shot clock and score in an arena-style bar.
+   Single theme: gym lights on, crowd gone home. */
+:root {
+  --wall: #2b2f3a;
+  --wood: #d79a5a;
+  --wood-2: #c4874a;
+  --orange: #f2711c;
+  --ink: #f7f3ea;
+  --muted: #aab0c0;
+  --led: #ff4d3d;
+  --font-display: 'Bowlby One SC', Impact, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--wall);
+  color: var(--ink);
+}
+body {
+  font-family: var(--font-body);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.bar {
+  position: fixed;
+  left: 50%;
+  top: calc(env(safe-area-inset-top, 0px) + 10px);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  pointer-events: none;
+}
+.bar div {
+  background: #111318;
+  border: 2px solid #3a3f4d;
+  padding: 6px 12px;
+  text-align: center;
+  min-width: 64px;
+}
+.bar span {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.bar b {
+  font: 400 26px/1 var(--font-display);
+  color: var(--led);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px rgba(255, 77, 61, 0.6);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: rgba(17, 19, 24, 0.55);
+}
+.card {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  background: #111318;
+  border: 2px solid var(--orange);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+h1,
+h2 {
+  margin: 0;
+  font: 400 clamp(40px, 11vw, 54px)/1 var(--font-display);
+  color: var(--orange);
+  text-wrap: balance;
+}
+h2 {
+  font-size: 34px;
+}
+p {
+  margin: 0;
+  line-height: 1.55;
+}
+.btn {
+  align-self: flex-start;
+  font: 400 18px/1 var(--font-display);
+  padding: 12px 20px;
+  border: 0;
+  background: var(--orange);
+  color: #111318;
+  cursor: pointer;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Petrona:wght@600;800&family=Schibsted+Grotesk:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a round birch board with a cross of 33 holes, glass marbles in all but the centre. Notes on the side.
+     Light: a Nordic living room. Dark: the same room by candlelight. */
+:root {
+  --bg: #f2efe9;
+  --birch: #e4cfa9;
+  --hole: #8a6b45;
+  --ink: #22201c;
+  --muted: #6d675d;
+  --marble: #2d7dd2;
+  --accent: #d1495b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #141311;
+    --birch: #8a7354;
+    --hole: #3b2e1d;
+    --ink: #efebe4;
+    --muted: #a8a196;
+    --marble: #5fa8ff;
+    --accent: #ff7b8a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #141311;
+  --birch: #8a7354;
+  --hole: #3b2e1d;
+  --ink: #efebe4;
+  --muted: #a8a196;
+  --marble: #5fa8ff;
+  --accent: #ff7b8a;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

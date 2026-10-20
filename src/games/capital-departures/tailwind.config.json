@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "hall": "var(--hall)",
+        "board": "var(--board)",
+        "flap": "var(--flap)",
+        "amber": "var(--amber)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "go": "var(--go)",
+        "stop": "var(--stop)"
+      },
+      "fontFamily": {
+        "body": ["B612", "system-ui", "sans-serif"],
+        "mono": ["\"B612 Mono\"", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a 1940s telephone switchboard. A grid of jack sockets; pairs of matching coloured plugs must be joined
+     by cords that never cross, filling every socket. Light: a cream enamel panel. Dark: the panel with the room lights off. */
+:root {
+  --bg: #e9e4d8;
+  --panel: #f6f1e4;
+  --socket: #cfc6b2;
+  --ink: #262019;
+  --muted: #6d6556;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #12110f;
+    --panel: #1f1d19;
+    --socket: #36322b;
+    --ink: #efe9dc;
+    --muted: #a69e8e;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #12110f;
+  --panel: #1f1d19;
+  --socket: #36322b;
+  --ink: #efe9dc;
+  --muted: #a69e8e;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Saira:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a naval plotting room. Two sea charts side by side (stacked on phones): the enemy waters you fire into,
+     and your own fleet. Light: chart paper. Dark: the plotting room at night. */
+:root {
+  --bg: #dfe6e8;
+  --sea: #c7d9e0;
+  --grid: #9db7c2;
+  --ink: #1c2b33;
+  --muted: #57707c;
+  --hull: #5d6b73;
+  --hit: #d9381e;
+  --splash: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0d1418;
+    --sea: #16323d;
+    --grid: #24505f;
+    --ink: #dce9ee;
+    --muted: #8ea8b3;
+    --hull: #8b9aa2;
+    --hit: #ff6a4d;
+    --splash: #b7d3dd;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0d1418;
+  --sea: #16323d;
+  --grid: #24505f;
+  --ink: #dce9ee;
+  --muted: #8ea8b3;
+  --hull: #8b9aa2;
+  --hit: #ff6a4d;
+  --splash: #b7d3dd;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

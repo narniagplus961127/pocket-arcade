@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "wood": "var(--wood)",
+        "pit": "var(--pit)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "glow": "var(--glow)"
+      },
+      "fontFamily": {
+        "display": ["Lora", "Georgia", "serif"],
+        "body": ["Cabin", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

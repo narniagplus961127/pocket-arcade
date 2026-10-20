@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&family=Hanken+Grotesk:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: an expedition map. A 12×12 letter grid on desert-sand card, the list of words to find as a field log beside it.
+     Light: noon in the desert. Dark: the same map under a camp lantern. */
+:root {
+  --bg: #f3e6cf;
+  --board: #fffaf0;
+  --ink: #20343a;
+  --muted: #6d6a5c;
+  --accent: #0f8b8d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #161a1b;
+    --board: #222a2c;
+    --ink: #eef3f1;
+    --muted: #a2aba6;
+    --accent: #43c6c8;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #161a1b;
+  --board: #222a2c;
+  --ink: #eef3f1;
+  --muted: #a2aba6;
+  --accent: #43c6c8;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

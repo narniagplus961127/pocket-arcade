@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "meadow": "var(--meadow)",
+        "barn": "var(--barn)",
+        "hay": "var(--hay)",
+        "line": "var(--line)"
+      },
+      "fontFamily": {
+        "display": ["\"Henny Penny\"", "Georgia", "serif"],
+        "body": ["Andika", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

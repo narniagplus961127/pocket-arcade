@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "panel": "var(--panel)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "accent": "var(--accent)"
+      },
+      "fontFamily": {
+        "display": ["\"Dela Gothic One\"", "system-ui", "sans-serif"],
+        "body": ["Overpass", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

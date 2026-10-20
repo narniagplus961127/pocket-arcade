@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a single sheet of rice paper with a square brush board; score stamped in a red seal; controls under the board.
+   Single paper theme on purpose: ink needs paper. */
+:root {
+  --paper: #eeeadf;
+  --paper-2: #e2dccb;
+  --ink: #16130f;
+  --wash: rgba(22, 19, 15, 0.08);
+  --seal: #c23a2b;
+  --muted: #6e675a;
+  --font-display: 'Zen Antique', Georgia, serif;
+  --font-body: 'Zen Kaku Gothic New', system-ui, sans-serif;
+  color-scheme: light;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 28px;
+  background-image:
+    radial-gradient(circle at 15% 10%, var(--paper-2), transparent 40%),
+    radial-gradient(circle at 90% 80%, var(--paper-2), transparent 35%);
+}
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(34px, 9vw, 46px)/1 var(--font-display);
+  letter-spacing: 0.04em;
+}
+.tag {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.seal {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: var(--seal);
+  color: #fbeee8;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transform: rotate(-4deg);
+  font: 400 26px/1 var(--font-display);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+.seal small {
+  display: block;
+  font: 700 9px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  margin-top: 4px;
+}
+.board {
+  position: relative;
+}
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: 4px;
+  background: var(--paper);
+  box-shadow:
+    0 0 0 1px var(--wash),
+    0 12px 30px rgba(22, 19, 15, 0.12);
+  touch-action: none;
+}
+.over {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: rgba(238, 234, 223, 0.82);
+  border-radius: 4px;
+  padding: 16px;
+}
+.over h2 {
+  margin: 0 0 8px;
+  font: 400 34px/1.1 var(--font-display);
+}
+.over p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.btn {
+  font: 700 16px/1 var(--font-body);
+  letter-spacing: 0.08em;
+  padding: 13px 22px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--seal);
+  outline-offset: 3px;
+}
+.pad {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  gap: 6px;
+  justify-content: center;
+}
+.pad button {
+  height: 48px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.pad button:focus-visible {
+  outline: 3px solid var(--seal);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 8px;
+}

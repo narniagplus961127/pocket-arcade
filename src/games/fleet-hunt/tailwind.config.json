@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "sea": "var(--sea)",
+        "grid": "var(--grid)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "hull": "var(--hull)",
+        "hit": "var(--hit)",
+        "splash": "var(--splash)"
+      },
+      "fontFamily": {
+        "stencil": ["\"Saira Stencil One\"", "Impact", "sans-serif"],
+        "body": ["Saira", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

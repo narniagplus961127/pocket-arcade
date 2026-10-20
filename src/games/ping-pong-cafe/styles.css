@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a top-down table-tennis table fitted portrait in a café; chalkboard scoreboard at the top.
+   Single theme: a corner café with a blue table. */
+:root {
+  --floor: #c9a27a;
+  --floor-2: #b88e66;
+  --table: #1f5fa8;
+  --line: #ffffff;
+  --chalk: #2f3a33;
+  --ink: #f6f1e7;
+  --orange: #ff8a3d;
+  --font-display: 'Barlow Condensed', Impact, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  color-scheme: light;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--floor);
+}
+body {
+  font-family: var(--font-body);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: none;
+}
+.board {
+  position: fixed;
+  left: 50%;
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  transform: translateX(-50%);
+  background: var(--chalk);
+  color: var(--ink);
+  border: 5px solid #7a5532;
+  border-radius: 6px;
+  padding: 6px 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font: 800 26px/1 var(--font-display);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.board small {
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  display: block;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: rgba(47, 58, 51, 0.35);
+}
+.card {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  background: var(--chalk);
+  color: var(--ink);
+  border: 6px solid #7a5532;
+  border-radius: 6px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+h1,
+h2 {
+  margin: 0;
+  font: 800 clamp(40px, 11vw, 56px)/0.95 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+h2 {
+  font-size: 38px;
+}
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+.levels {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn {
+  font: 800 18px/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 18px;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.btn.primary {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #2f3a33;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}

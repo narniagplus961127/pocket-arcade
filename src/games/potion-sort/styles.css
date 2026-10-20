@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;800&family=Spectral:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: an apothecary shelf. Glass vials stand in rows on wooden planks; recipe number and pour counter on a parchment label.
+   Single theme: a candlelit apothecary. */
+:root {
+  --wall: #1d1712;
+  --plank: #5b3a22;
+  --plank-hi: #7a5232;
+  --glass: rgba(220, 235, 255, 0.18);
+  --ink: #f3e6c8;
+  --muted: #b9a684;
+  --candle: #ffcf73;
+  --font-display: 'Grenze Gotisch', Georgia, serif;
+  --font-body: 'Spectral', Georgia, serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: radial-gradient(ellipse at 50% 0%, #3a2a1c, var(--wall) 60%);
+  background-color: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 30px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+main {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+h1 {
+  margin: 0;
+  font: 800 clamp(40px, 11vw, 58px)/0.95 var(--font-display);
+  color: var(--candle);
+  text-shadow: 0 0 24px rgba(255, 207, 115, 0.35);
+}
+.label {
+  background: #e8d6ac;
+  color: #3a2a1c;
+  padding: 8px 14px;
+  border-radius: 2px;
+  font: 600 14px/1.4 var(--font-body);
+  transform: rotate(1.5deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.label b {
+  font: 800 20px/1 var(--font-display);
+}
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(8px, 3vw, 20px) clamp(10px, 3.5vw, 22px);
+  padding: 18px 10px 0;
+  background: linear-gradient(
+    transparent calc(100% - 14px),
+    var(--plank-hi) calc(100% - 14px),
+    var(--plank) 100%
+  );
+}
+.vial {
+  width: clamp(42px, 12vw, 58px);
+  height: clamp(150px, 40vw, 200px);
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s;
+}
+.vial:focus-visible {
+  outline: 3px solid var(--candle);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+.vial.sel {
+  transform: translateY(-16px);
+}
+.tube {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px;
+  bottom: 0;
+  border: 2.5px solid rgba(230, 240, 255, 0.55);
+  border-top: 0;
+  border-radius: 0 0 999px 999px;
+  overflow: hidden;
+  background: var(--glass);
+  display: flex;
+  flex-direction: column-reverse;
+}
+.lip {
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: 4px;
+  height: 10px;
+  border: 2.5px solid rgba(230, 240, 255, 0.55);
+  border-radius: 4px;
+  background: rgba(230, 240, 255, 0.08);
+}
+.layer {
+  height: 22.5%;
+  flex: none;
+  position: relative;
+  transition: background 0.2s;
+}
+.layer::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  top: 10%;
+  width: 14%;
+  height: 70%;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+}
+.vial.full .lip {
+  border-color: var(--candle);
+  box-shadow: 0 0 12px var(--candle);
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+button.ctl {
+  font: 600 15px/1 var(--font-body);
+  padding: 11px 16px;
+  border-radius: 4px;
+  border: 1.5px solid var(--muted);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.ctl:focus-visible {
+  outline: 3px solid var(--candle);
+  outline-offset: 2px;
+}
+button.ctl:disabled {
+  opacity: 0.4;
+}
+.msg {
+  min-height: 30px;
+  font: 600 24px/1.2 var(--font-display);
+  color: var(--candle);
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}

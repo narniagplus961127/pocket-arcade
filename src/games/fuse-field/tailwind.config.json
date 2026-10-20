@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "pea": "var(--pea)",
+        "sun": "var(--sun)",
+        "soil": "var(--soil)"
+      },
+      "fontFamily": {
+        "display": ["Boogaloo", "system-ui", "sans-serif"],
+        "body": ["Mulish", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

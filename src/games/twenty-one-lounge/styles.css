@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a semicircular blackjack table in a late-night jazz lounge. Dealer's hand at the top arc,
+     your hand below, chip rack and action buttons along the rail. Single theme: midnight blue with a pink neon sign. */
+:root {
+  --night: #0b1028;
+  --felt: #173a6b;
+  --neon: #ff4fa3;
+  --card: #fdfbf5;
+  --ink: #eef1ff;
+  --muted: #9ba6d0;
+  --win: #59e3a8;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--ink);
+  min-height: 100vh;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.neon-text {
+  color: var(--neon);
+  text-shadow:
+    0 0 6px var(--neon),
+    0 0 22px rgba(255, 79, 163, 0.6);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-40px) rotate(-8deg);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-in {
+    animation: none;
+  }
+}

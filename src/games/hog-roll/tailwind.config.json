@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "barn": "var(--barn)",
+        "straw": "var(--straw)",
+        "plank": "var(--plank)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "pig": "var(--pig)"
+      },
+      "fontFamily": {
+        "display": ["Modak", "system-ui", "sans-serif"],
+        "body": ["\"Inter Tight\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

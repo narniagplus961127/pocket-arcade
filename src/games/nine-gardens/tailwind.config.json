@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "bed": "var(--bed)",
+        "soil": "var(--soil)",
+        "leaf": "var(--leaf)",
+        "bloom": "var(--bloom)",
+        "given": "var(--given)"
+      },
+      "fontFamily": {
+        "display": ["\"Young Serif\"", "Georgia", "serif"],
+        "body": ["\"Instrument Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

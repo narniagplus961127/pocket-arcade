@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "field": "var(--field)",
+        "post": "var(--post)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "mine": "var(--mine)",
+        "theirs": "var(--theirs)"
+      },
+      "fontFamily": {
+        "display": ["Fredoka", "system-ui", "sans-serif"],
+        "body": ["\"Lexend Deca\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

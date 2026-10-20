@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Karla:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a gentlemen's-club card room. The board sits in a mahogany frame; the captured-piece trays and
+     the club secretary's notes sit beside it. Single theme on purpose: wood panelling and lamplight. */
+:root {
+  --room: #2a1712;
+  --wood: #5a2d1c;
+  --light-sq: #ecdcb8;
+  --dark-sq: #6b3b22;
+  --ink: #f4e9d3;
+  --muted: #c4ad8b;
+  --brass: #d4a64a;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 0%, #3d2219, var(--room) 70%);
+  background-color: var(--room);
+  color: var(--ink);
+  min-height: 100vh;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "tile": "var(--tile)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "hot": "var(--hot)"
+      },
+      "fontFamily": {
+        "display": ["Anton", "Impact", "sans-serif"],
+        "mono": ["\"JetBrains Mono\"", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

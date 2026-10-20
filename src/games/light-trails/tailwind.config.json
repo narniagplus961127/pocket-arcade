@@ -1,0 +1,22 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "paper": "var(--paper)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "rule": "var(--grid)",
+        "card": "var(--card)",
+        "r0": "var(--r0)",
+        "r1": "var(--r1)",
+        "r2": "var(--r2)",
+        "r3": "var(--r3)"
+      },
+      "fontFamily": {
+        "display": ["Tomorrow", "system-ui", "sans-serif"],
+        "mono": ["\"Overpass Mono\"", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

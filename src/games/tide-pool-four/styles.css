@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a rock-pool board (7×6) carved in sandstone; coral (you) vs sea-glass (the octopus); turn banner above, difficulty below.
+   Light: low tide at noon. Dark: low tide by moonlight. */
+:root {
+  --bg: #cfe9ea;
+  --rock: #c9a77c;
+  --rock-2: #a9875d;
+  --pool: #2f7f8f;
+  --coral: #ff6f61;
+  --glass: #7fd8c8;
+  --ink: #17323a;
+  --muted: #4f6e75;
+  --font-display: 'Righteous', system-ui, sans-serif;
+  --font-body: 'Rubik', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0d1d24;
+    --rock: #6e5a41;
+    --rock-2: #54442f;
+    --pool: #163f4a;
+    --ink: #e3f2f3;
+    --muted: #93b3b8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #0d1d24;
+  --rock: #6e5a41;
+  --rock-2: #54442f;
+  --pool: #163f4a;
+  --ink: #e3f2f3;
+  --muted: #93b3b8;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 28px;
+}
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(34px, 9vw, 46px)/1 var(--font-display);
+}
+.tag {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 400 20px/1.2 var(--font-display);
+  min-height: 30px;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex: none;
+}
+.board {
+  background: var(--rock);
+  border-radius: 22px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  box-shadow:
+    inset 0 -8px 0 var(--rock-2),
+    0 12px 30px rgba(23, 50, 58, 0.2);
+}
+.col {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 6px;
+  border: 0;
+  padding: 4px;
+  background: transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  min-width: 0;
+}
+.col:hover,
+.col:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+}
+.col:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 1px;
+}
+.col:disabled {
+  cursor: default;
+  background: transparent;
+}
+.cell {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--pool);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+.disc {
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  animation: drop 0.35s cubic-bezier(0.4, 1.6, 0.6, 1);
+}
+.disc.p1 {
+  background: radial-gradient(circle at 35% 30%, #ffb3aa, var(--coral) 60%);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+.disc.p2 {
+  background: radial-gradient(circle at 35% 30%, #e3fff9, var(--glass) 60%);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+}
+.disc.win {
+  animation: glow 0.7s ease-in-out infinite alternate;
+}
+@keyframes drop {
+  from {
+    transform: translateY(calc(var(--h) * -110%));
+  }
+}
+@keyframes glow {
+  to {
+    box-shadow:
+      0 0 0 4px #fff,
+      0 0 18px #fff;
+  }
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.row span {
+  color: var(--muted);
+  font-size: 14px;
+  margin-right: 4px;
+}
+button.ctl {
+  font: 600 14px/1 var(--font-body);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.ctl[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--bg);
+}
+button.ctl:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 2px;
+}
+.score {
+  color: var(--muted);
+  font-size: 14px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .disc {
+    animation: none;
+  }
+}

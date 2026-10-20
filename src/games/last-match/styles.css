@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: an old matchbox label. Four rows of matches laid on the label, a hand-printed score panel,
+     and the take button at the bottom. Light: the printed label. Dark: the same box in a dim bar. */
+:root {
+  --bg: #f1e8d6;
+  --label: #fffaf0;
+  --red: #c8261f;
+  --ink: #141414;
+  --muted: #6b5f50;
+  --wood: #e6c48c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #141110;
+    --label: #221d1a;
+    --ink: #f4ecdf;
+    --muted: #ae9f8c;
+    --red: #ff5a4c;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #141110;
+  --label: #221d1a;
+  --ink: #f4ecdf;
+  --muted: #ae9f8c;
+  --red: #ff5a4c;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes burn {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) rotate(25deg);
+  }
+}
+
+.burning {
+  animation: burn 0.5s ease-in forwards;
+}

@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a merchant's velvet tray (8×8) under an arched header; purse, target and moves in a strip.
+   Single theme: lapis-tiled bazaar stall lit by lanterns. */
+:root {
+  --lapis: #14306b;
+  --lapis-2: #1d418a;
+  --velvet: #3a1235;
+  --saffron: #f2a51a;
+  --ink: #fdf3df;
+  --muted: #c5b9e0;
+  --font-display: 'Rozha One', Georgia, serif;
+  --font-body: 'Mukta', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--lapis);
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(circle at 0 0, var(--lapis-2) 0 12px, transparent 13px),
+    radial-gradient(circle at 24px 24px, var(--lapis-2) 0 12px, transparent 13px);
+  background-size: 48px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 28px;
+}
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.arch {
+  background: var(--velvet);
+  border-radius: 240px 240px 12px 12px;
+  padding: 26px 20px 14px;
+  text-align: center;
+  border: 3px solid var(--saffron);
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(36px, 10vw, 50px)/1 var(--font-display);
+  color: var(--saffron);
+}
+.tag {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.strip div {
+  background: var(--velvet);
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid rgba(242, 165, 26, 0.35);
+}
+.strip span {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.strip b {
+  font: 400 24px/1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.bar {
+  height: 8px;
+  background: rgba(253, 243, 223, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--saffron);
+  transition: width 0.3s;
+}
+.tray {
+  position: relative;
+  background: var(--velvet);
+  border-radius: 14px;
+  padding: 8px;
+  border: 3px solid var(--saffron);
+}
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 100%;
+  touch-action: none;
+  cursor: pointer;
+}
+.msg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: rgba(58, 18, 53, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+}
+.msg h2 {
+  margin: 0 0 6px;
+  font: 400 32px/1.1 var(--font-display);
+  color: var(--saffron);
+}
+.msg p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+.btn {
+  font: 800 16px/1 var(--font-body);
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--saffron);
+  color: #2a0d25;
+  cursor: pointer;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}

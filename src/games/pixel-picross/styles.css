@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Work+Sans:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a graph-paper grid with number clues along the top and left; a fill/mark tool switch and size picker beneath.
+   Light: lavender graph paper. Dark: a dim pixel workstation. */
+:root {
+  --bg: #efeaf7;
+  --paper: #fbf9ff;
+  --line: #c9bfe0;
+  --line-5: #8f80b8;
+  --fill: #3d2f6b;
+  --mark: #c0392b;
+  --ink: #2a2140;
+  --muted: #6e6490;
+  --hi: #ffd166;
+  --font-display: 'Pixelify Sans', monospace;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #15121e;
+    --paper: #1f1a2c;
+    --line: #3a3252;
+    --line-5: #6f62a0;
+    --fill: #cbb8ff;
+    --mark: #ff7b6b;
+    --ink: #ece6ff;
+    --muted: #a59cc6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #15121e;
+  --paper: #1f1a2c;
+  --line: #3a3252;
+  --line-5: #6f62a0;
+  --fill: #cbb8ff;
+  --mark: #ff7b6b;
+  --ink: #ece6ff;
+  --muted: #a59cc6;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 28px;
+}
+main {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+h1 {
+  margin: 0;
+  font: 700 clamp(34px, 9vw, 46px)/1 var(--font-display);
+  letter-spacing: 0.02em;
+}
+.tag {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.wrap {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  background: var(--paper);
+}
+td,
+th {
+  padding: 0;
+  text-align: center;
+  font: 500 clamp(10px, 2.6vw, 14px)/1.15 var(--font-display);
+  color: var(--muted);
+}
+th.ch {
+  vertical-align: bottom;
+  padding: 4px 0 6px;
+  min-width: 22px;
+}
+th.rh {
+  text-align: right;
+  padding: 0 8px 0 4px;
+  white-space: nowrap;
+}
+th.done {
+  color: var(--line-5);
+  opacity: 0.5;
+}
+td.c {
+  width: var(--cs);
+  height: var(--cs);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  position: relative;
+}
+td.c.r5 {
+  border-bottom: 2px solid var(--line-5);
+}
+td.c.c5 {
+  border-right: 2px solid var(--line-5);
+}
+td.c.f {
+  background: var(--fill);
+}
+td.c.x::after {
+  content: '×';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--mark);
+  font: 700 calc(var(--cs) * 0.8)/1 var(--font-body);
+}
+td.c.hl {
+  box-shadow: inset 0 0 0 2px var(--hi);
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+button.ctl {
+  font: 600 14px/1 var(--font-body);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.ctl[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--bg);
+}
+button.ctl:focus-visible {
+  outline: 3px solid var(--hi);
+  outline-offset: 2px;
+}
+.msg {
+  min-height: 26px;
+  font: 700 20px/1.2 var(--font-display);
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}

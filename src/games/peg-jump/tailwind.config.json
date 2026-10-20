@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "birch": "var(--birch)",
+        "hole": "var(--hole)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "marble": "var(--marble)",
+        "accent": "var(--accent)"
+      },
+      "fontFamily": {
+        "display": ["Petrona", "Georgia", "serif"],
+        "body": ["\"Schibsted Grotesk\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

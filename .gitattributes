@@ -1,0 +1,9 @@
+* text=auto eol=crlf
+
+*.jpg -text
+*.jpeg -text
+*.png -text
+*.webp -text
+*.ico -text
+*.woff -text
+*.woff2 -text

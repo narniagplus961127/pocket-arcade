@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "berry": "var(--berry)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Grandstander", "system-ui", "sans-serif"],
+        "body": ["Nunito", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "stone": "var(--stone)",
+        "moss": "var(--moss)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "torch": "var(--torch)"
+      },
+      "fontFamily": {
+        "display": ["Almendra", "Georgia", "serif"],
+        "body": ["\"Rethink Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

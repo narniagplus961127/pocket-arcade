@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@500;700&family=Overpass+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a surveyor's sheet. The arena is a gridded map with faint contour lines; riders are survey pens
+     drawing solid routes. Scoreboard above, turn buttons below on touch screens.
+     Light: pale drafting paper. Dark: a classic cyan blueprint. */
+:root {
+  --bg: #dfe6e8;
+  --paper: #eef3f4;
+  --grid: #cbd8dd;
+  --contour: #b7c9b9;
+  --ink: #1b3042;
+  --muted: #5a6f7e;
+  --card: rgba(238, 243, 244, 0.94);
+  --r0: #d9481c;
+  --r1: #1f7a8c;
+  --r2: #a87d00;
+  --r3: #7a3b69;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0b2236;
+    --paper: #103452;
+    --grid: #1f4d73;
+    --contour: #2c6188;
+    --ink: #e4f0f8;
+    --muted: #8fb2cb;
+    --card: rgba(16, 52, 82, 0.94);
+    --r0: #ff7a45;
+    --r1: #56d4e0;
+    --r2: #f2c94c;
+    --r3: #e39ad2;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b2236;
+  --paper: #103452;
+  --grid: #1f4d73;
+  --contour: #2c6188;
+  --ink: #e4f0f8;
+  --muted: #8fb2cb;
+  --card: rgba(16, 52, 82, 0.94);
+  --r0: #ff7a45;
+  --r1: #56d4e0;
+  --r2: #f2c94c;
+  --r3: #e39ad2;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Turn buttons only show on touch screens. */
+@media (hover: hover) and (pointer: fine) {
+  .touch-only {
+    display: none;
+  }
+}

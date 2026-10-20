@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Spline+Sans+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: an 1890s telegraph office desk. A brass sounder lamp, a paper tape printing dots and dashes,
+     and a letter board to answer on. Single theme: lamplit mahogany. */
+:root {
+  --bg: #1e140e;
+  --desk: #4a2c1a;
+  --brass: #d8a94a;
+  --tape: #efe4c8;
+  --ink: #f4e8d2;
+  --muted: #c0a785;
+  --lamp: #ffcf6b;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 0%, #3a2416, var(--bg) 70%);
+  min-height: 100vh;
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

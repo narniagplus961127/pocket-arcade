@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "board": "var(--board)",
+        "cell": "var(--cell)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "pearl": "var(--pearl)",
+        "coal": "var(--coal)",
+        "hint": "var(--hint)"
+      },
+      "fontFamily": {
+        "display": ["Syne", "system-ui", "sans-serif"],
+        "body": ["Manrope", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

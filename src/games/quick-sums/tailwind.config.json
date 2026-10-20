@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "board": "var(--board)",
+        "frame": "var(--frame)",
+        "chalk": "var(--chalk)",
+        "muted": "var(--muted)",
+        "yellow": "var(--yellow)",
+        "pink": "var(--pink)"
+      },
+      "fontFamily": {
+        "chalk": ["\"Cabin Sketch\"", "cursive"],
+        "body": ["Questrial", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

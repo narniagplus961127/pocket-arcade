@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a shelf of game cartridges. A big masthead with the count, a search box and kind filters,
+     then a wrapping grid of cards, each led by a screenshot of the game.
+     Light: a toy-shop shelf. Dark: the arcade after hours. */
+:root {
+  --bg: #f1ede6;
+  --shelf: #e3ddd2;
+  --card: #ffffff;
+  --ink: #1c1a17;
+  --muted: #6b655b;
+  --accent: #e2553f;
+  --chip: #e8e2d7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #131210;
+    --shelf: #1c1a17;
+    --card: #24211d;
+    --ink: #f3efe7;
+    --muted: #a59e92;
+    --accent: #ff7a5c;
+    --chip: #2b2823;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #131210;
+  --shelf: #1c1a17;
+  --card: #24211d;
+  --ink: #f3efe7;
+  --muted: #a59e92;
+  --accent: #ff7a5c;
+  --chip: #2b2823;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cart {
+    transition: none !important;
+  }
+  .cart:hover {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "board": "var(--board)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "bulb": "var(--bulb)"
+      },
+      "fontFamily": {
+        "display": ["\"Bungee Inline\"", "Impact", "sans-serif"],
+        "body": ["\"Nunito Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

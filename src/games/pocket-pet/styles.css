@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Nunito:wght@600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: an egg-shaped 90s virtual pet toy. A small LCD screen with the pixel pet, meters along its top,
+     and three chunky buttons below. Single theme: a translucent coral shell. */
+:root {
+  --bg: #ffe6dc;
+  --shell: #ff7f6e;
+  --lcd: #c7d6a8;
+  --pixel: #26301a;
+  --ink: #3a1f18;
+  --muted: #8a5d50;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: radial-gradient(
+    circle at 20px 20px,
+    rgba(255, 127, 110, 0.18) 4px,
+    transparent 5px
+  );
+  background-size: 40px 40px;
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

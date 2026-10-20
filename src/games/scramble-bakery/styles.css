@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Albert+Sans:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a bakery counter. Scrambled letter cookies on a tray, an empty baking tin to arrange them in,
+     an oven timer and the day's takings above. Single theme: a pink-and-chocolate patisserie. */
+:root {
+  --bg: #fde4ea;
+  --counter: #5a2e1f;
+  --dough: #f7d8a6;
+  --crust: #c98a45;
+  --ink: #3a1d14;
+  --muted: #8a5a4c;
+  --frosting: #ff7aa2;
+  --mint: #6fd3b0;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: radial-gradient(
+    circle at 12px 12px,
+    rgba(255, 122, 162, 0.18) 3px,
+    transparent 4px
+  );
+  background-size: 28px 28px;
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop {
+  animation: pop 0.22s ease-out;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+.btn {
+  font-family: Coiny, system-ui, sans-serif;
+  font-size: 20px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--frosting);
+  color: #fff;
+  box-shadow: 0 5px 0 #c8456d;
+}
+
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #c8456d;
+}
+
+.btn-ghost {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--counter);
+  color: var(--counter);
+  background: transparent;
+}
+
+.btn:focus-visible,
+.btn-ghost:focus-visible {
+  outline: 3px solid var(--counter);
+  outline-offset: 3px;
+}

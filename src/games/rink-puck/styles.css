@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Lexend:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a portrait air-hockey table under roller-rink lights. Scoreboard above, the table fills the height
+     available. Single theme: a dim 1980s rink at night, with soft pink and teal neon tubes on deep indigo. */
+:root {
+  --bg: #0d0b1c;
+  --ink: #f4ecff;
+  --muted: #a89cc4;
+  --pink: #ff5fa2;
+  --teal: #3fe0d0;
+  --card: rgba(13, 11, 28, 0.9);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(255, 95, 162, 0.14), transparent 60%),
+    radial-gradient(ellipse at 50% 110%, rgba(63, 224, 208, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

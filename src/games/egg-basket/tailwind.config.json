@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "barn": "var(--barn)",
+        "yolk": "var(--yolk)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Chicle", "Georgia", "serif"],
+        "body": ["Delius", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

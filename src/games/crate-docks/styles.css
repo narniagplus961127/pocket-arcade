@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans+Condensed:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a cargo hold (10×20) beside a manifest panel; touch controls along the bottom on phones.
+   Single theme: a harbor at night under sodium lamps. */
+:root {
+  --water: #0d1b2a;
+  --hold: #13263a;
+  --steel: #2b4058;
+  --lamp: #ffb547;
+  --ink: #e8eef5;
+  --muted: #8aa0b8;
+  --font-display: 'Big Shoulders Display', Impact, sans-serif;
+  --font-body: 'IBM Plex Sans Condensed', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  background: var(--water);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow: hidden;
+  touch-action: none;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 12px;
+  box-sizing: border-box;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02) 0 2px,
+    transparent 2px 14px
+  );
+}
+main {
+  height: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 12px;
+}
+.hold {
+  grid-row: 1;
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+}
+canvas {
+  height: 100%;
+  aspect-ratio: 1/2;
+  max-width: 62vw;
+  border: 3px solid var(--steel);
+  border-radius: 4px;
+  background: var(--hold);
+  display: block;
+}
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+h1 {
+  margin: 0;
+  font: 900 clamp(30px, 7vw, 46px)/0.9 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--lamp);
+}
+.k {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.v {
+  font: 700 28px/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+#next {
+  width: 88px;
+  height: 64px;
+  background: var(--hold);
+  border: 2px solid var(--steel);
+  border-radius: 4px;
+}
+.help {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.pad {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pad button {
+  height: 52px;
+  border-radius: 6px;
+  border: 2px solid var(--steel);
+  background: var(--hold);
+  color: var(--ink);
+  font: 700 18px/1 var(--font-display);
+  cursor: pointer;
+}
+.pad button:active {
+  background: var(--steel);
+}
+.over {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: rgba(13, 27, 42, 0.85);
+  padding: 12px;
+}
+.over h2 {
+  margin: 0 0 6px;
+  font: 900 34px/1 var(--font-display);
+  text-transform: uppercase;
+  color: var(--lamp);
+}
+.over p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.btn {
+  font: 900 18px/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--lamp);
+  color: #1a1205;
+  cursor: pointer;
+}
+.btn:focus-visible,
+.pad button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+@media (min-width: 700px) {
+  .pad {
+    display: none;
+  }
+}

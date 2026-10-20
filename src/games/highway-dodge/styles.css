@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Asap+Condensed:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a desert interstate seen from above at golden hour. Long shadows fall to the right, sand glows amber
+     on both shoulders, and a dashboard strip (distance, coins, fuel) sits above the road.
+     Single theme: dusk-brown page around a sunlit road, so color-scheme is dark. */
+:root {
+  --bg: #2a1712;
+  --ink: #fbe3c0;
+  --muted: #c99a72;
+  --sun: #f2a541;
+  --teal: #1aa6a0;
+  --card: rgba(42, 23, 18, 0.9);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: radial-gradient(
+    ellipse at 20% 0%,
+    rgba(242, 165, 65, 0.22) 0,
+    transparent 55%
+  );
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

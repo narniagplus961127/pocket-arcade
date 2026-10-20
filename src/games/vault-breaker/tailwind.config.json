@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "steel": "var(--steel)",
+        "plate": "var(--plate)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "lamp": "var(--lamp)"
+      },
+      "fontFamily": {
+        "display": ["Michroma", "system-ui", "sans-serif"],
+        "body": ["\"Public Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

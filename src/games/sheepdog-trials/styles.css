@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Overlock:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a hillside trial field seen from above, with the judge's chalkboard (level, clock, flock count)
+     on top and the two whistle buttons beneath. Light: a bright Welsh afternoon. Dark: the same hills under rain cloud. */
+:root {
+  --bg: #dfe8da;
+  --card: #f5f7ef;
+  --ink: #1f2b22;
+  --muted: #5e6d60;
+  --moss: #3f7a3a;
+  --slate: #4b5966;
+  --heather: #9a4f7a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #141b17;
+    --card: #1f2923;
+    --ink: #e7eee3;
+    --muted: #9fb0a2;
+    --moss: #7cc073;
+    --slate: #9fb0bf;
+    --heather: #d48bb4;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #141b17;
+  --card: #1f2923;
+  --ink: #e7eee3;
+  --muted: #9fb0a2;
+  --moss: #7cc073;
+  --slate: #9fb0bf;
+  --heather: #d48bb4;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: linear-gradient(
+    175deg,
+    transparent 70%,
+    color-mix(in srgb, var(--moss) 12%, transparent) 70% 78%,
+    transparent 78%
+  );
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

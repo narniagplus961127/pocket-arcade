@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "shell": "var(--shell)",
+        "lcd": "var(--lcd)",
+        "pixel": "var(--pixel)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)"
+      },
+      "fontFamily": {
+        "pixel": ["Silkscreen", "monospace"],
+        "body": ["Nunito", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

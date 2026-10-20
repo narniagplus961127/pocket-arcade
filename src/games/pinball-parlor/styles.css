@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&family=Antonio:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a 1950s diner pinball machine standing against a mint tiled wall. A chrome-railed cherry red table fills
+     the middle, the score glows on a cream marquee above, and the controls are printed on the apron card below.
+     Single theme: mint, cherry red, cream and chrome. */
+:root {
+  --bg: #cdeee2;
+  --ink: #2b0c12;
+  --muted: #4f6f66;
+  --cherry: #d7263d;
+  --chrome: #c7d1d6;
+  --cream: #fff6e2;
+  --card: rgba(110, 14, 28, 0.93);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

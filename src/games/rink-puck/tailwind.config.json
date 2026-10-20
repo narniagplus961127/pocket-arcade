@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "pink": "var(--pink)",
+        "teal": "var(--teal)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["\"Tilt Neon\"", "system-ui", "sans-serif"],
+        "body": ["Lexend", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

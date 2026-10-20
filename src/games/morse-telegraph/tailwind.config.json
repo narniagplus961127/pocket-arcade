@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "desk": "var(--desk)",
+        "brass": "var(--brass)",
+        "tape": "var(--tape)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "lamp": "var(--lamp)"
+      },
+      "fontFamily": {
+        "display": ["\"IM Fell English SC\"", "Georgia", "serif"],
+        "mono": ["\"Spline Sans Mono\"", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

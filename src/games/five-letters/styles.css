@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Lexend:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a print shop. Composing stick of 6×5 type slugs at the top, a type-case keyboard below.
+   Light: newsprint. Dark: the press room at night. */
+:root {
+  --bg: #ece7dd;
+  --slug: #ffffff;
+  --edge: #c9c0b0;
+  --ink: #1f1b16;
+  --muted: #6e665a;
+  --hit: #3f7d4e;
+  --near: #c98a1e;
+  --miss: #7a7368;
+  --key: #d8d0c0;
+  --font-display: 'Rubik Mono One', Impact, monospace;
+  --font-body: 'Lexend', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #17150f;
+    --slug: #24211a;
+    --edge: #3d382d;
+    --ink: #f0eadc;
+    --muted: #a69d8b;
+    --hit: #4f9a62;
+    --near: #d39a2e;
+    --miss: #4a453b;
+    --key: #36312a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #17150f;
+  --slug: #24211a;
+  --edge: #3d382d;
+  --ink: #f0eadc;
+  --muted: #a69d8b;
+  --hit: #4f9a62;
+  --near: #d39a2e;
+  --miss: #4a453b;
+  --key: #36312a;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 24px;
+}
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 8px;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(22px, 6.5vw, 30px)/1.05 var(--font-display);
+  letter-spacing: -0.02em;
+}
+.streak {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.4;
+}
+.streak b {
+  color: var(--ink);
+  font-size: 16px;
+}
+.board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 6px;
+  width: min(100%, 330px);
+  margin: 0 auto;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+.row.shake {
+  animation: shake 0.35s;
+}
+@keyframes shake {
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+.tile {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  font: 400 clamp(20px, 7vw, 28px)/1 var(--font-display);
+  text-transform: uppercase;
+  background: var(--slug);
+  border: 2px solid var(--edge);
+  border-radius: 3px;
+  box-shadow: 0 3px 0 var(--edge);
+}
+.tile.filled {
+  border-color: var(--ink);
+  animation: press 0.1s;
+}
+@keyframes press {
+  50% {
+    transform: scale(1.08);
+  }
+}
+.tile.hit,
+.tile.near,
+.tile.miss {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: none;
+  transition: background 0.2s;
+}
+.tile.hit {
+  background: var(--hit);
+}
+.tile.near {
+  background: var(--near);
+}
+.tile.miss {
+  background: var(--miss);
+}
+.msg {
+  min-height: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+.kb {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.kb div {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.kb button {
+  flex: 1;
+  max-width: 44px;
+  height: 54px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--key);
+  color: var(--ink);
+  font: 700 15px/1 var(--font-body);
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  min-width: 0;
+}
+.kb button.wide {
+  max-width: 70px;
+  flex: 1.5;
+  font-size: 12px;
+}
+.kb button.hit {
+  background: var(--hit);
+  color: #fff;
+}
+.kb button.near {
+  background: var(--near);
+  color: #fff;
+}
+.kb button.miss {
+  background: var(--miss);
+  color: #fff;
+  opacity: 0.7;
+}
+.kb button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--near);
+  outline-offset: 2px;
+}
+.btn {
+  align-self: center;
+  font: 700 15px/1 var(--font-body);
+  padding: 12px 18px;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  cursor: pointer;
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: center;
+}

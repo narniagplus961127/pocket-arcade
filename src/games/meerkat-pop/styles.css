@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a savanna sunset backdrop; 3×3 burrows on a sandy mound; boop counter and timer pinned top.
+   Single theme: Kalahari golden hour. */
+:root {
+  --sky-1: #ff9e5e;
+  --sky-2: #ffd27a;
+  --sand: #e9b872;
+  --sand-2: #d49a52;
+  --hole: #3d2414;
+  --fur: #c68a4a;
+  --ink: #3a1e0c;
+  --cream: #fff4e0;
+  --snake: #4f8a3a;
+  --font-display: 'Bungee', Impact, sans-serif;
+  --font-body: 'Rubik', system-ui, sans-serif;
+  color-scheme: light;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  color: var(--ink);
+  font-family: var(--font-body);
+  background: linear-gradient(
+    var(--sky-1),
+    var(--sky-2) 45%,
+    var(--sand) 45.2%,
+    var(--sand-2)
+  );
+  background-attachment: fixed;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 28px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+h1 {
+  margin: 0;
+  font: 400 clamp(30px, 9vw, 44px)/1 var(--font-display);
+  color: var(--cream);
+  text-shadow: 3px 3px 0 var(--ink);
+}
+.sun {
+  position: fixed;
+  left: 68%;
+  top: 12%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff1c2;
+  opacity: 0.85;
+  z-index: -1;
+}
+.stat {
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  padding: 6px 10px;
+  text-align: center;
+  min-width: 64px;
+}
+.stat span {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.stat b {
+  font: 400 22px/1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.stats {
+  display: flex;
+  gap: 8px;
+}
+.field {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 4vw, 24px);
+  padding-top: 30px;
+}
+.burrow {
+  position: relative;
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0 0 50% 50%/0 0 24% 24%;
+  min-width: 0;
+}
+.burrow:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 2px;
+}
+.mound {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 0;
+  height: 34%;
+  border-radius: 50%;
+  background: var(--sand-2);
+  z-index: 2;
+}
+.hole {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: 12%;
+  height: 22%;
+  border-radius: 50%;
+  background: var(--hole);
+  z-index: 1;
+}
+.critter {
+  position: absolute;
+  left: 24%;
+  right: 24%;
+  bottom: -70%;
+  height: 78%;
+  transition: bottom 0.12s ease-out;
+  z-index: 1;
+}
+.burrow.up .critter {
+  bottom: 18%;
+}
+.burrow.bonked .critter {
+  bottom: -70%;
+  transition-duration: 0.25s;
+}
+.critter svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.pow {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font: 400 20px/1 var(--font-display);
+  color: var(--cream);
+  text-shadow: 2px 2px 0 var(--ink);
+  z-index: 3;
+  pointer-events: none;
+  animation: pow 0.5s ease-out forwards;
+}
+@keyframes pow {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0;
+  }
+}
+.card {
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.card p {
+  margin: 0;
+  line-height: 1.5;
+}
+.btn {
+  align-self: flex-start;
+  font: 400 18px/1 var(--font-display);
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 3px solid var(--ink);
+  background: #ffcf4a;
+  color: var(--ink);
+  cursor: pointer;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 3px;
+}

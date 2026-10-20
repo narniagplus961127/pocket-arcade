@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Red+Hat+Text:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a 1920s riverboat card table. Art-deco frame, the current card face up and the deck beside it,
+     with a pot that grows as your run of correct guesses gets longer. Single theme: velvet and brass. */
+:root {
+  --velvet: #5c0f1f;
+  --deep: #2c0710;
+  --gold: #e0b54a;
+  --card: #fbf6ea;
+  --ink: #f7ead0;
+  --muted: #d4b38a;
+  --suit-red: #b3182f;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(224, 181, 74, 0.05) 0 2px,
+      transparent 2px 22px
+    ),
+    radial-gradient(ellipse at 50% 30%, var(--velvet), var(--deep) 75%);
+  background-color: var(--deep);
+  min-height: 100vh;
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes deal {
+  from {
+    transform: translateX(80px) rotate(12deg);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.deal {
+  animation: deal 0.35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deal {
+    animation: none;
+  }
+}

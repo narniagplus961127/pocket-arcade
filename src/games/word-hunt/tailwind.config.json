@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "board": "var(--board)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "accent": "var(--accent)"
+      },
+      "fontFamily": {
+        "display": ["\"Rammetto One\"", "system-ui", "sans-serif"],
+        "body": ["\"Hanken Grotesk\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

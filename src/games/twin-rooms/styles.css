@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Questrial&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: two framed illustrations of the same mid-century living room, side by side on desktop and stacked
+     on phones, under a timer strip with a mustard sunburst. Light: a celadon gallery wall. Dark: a teal lounge at night. */
+:root {
+  --bg: #dfe9e4;
+  --card: #f7f3ea;
+  --ink: #22312e;
+  --muted: #5d6f69;
+  --mustard: #d99a1e;
+  --teal: #1f7470;
+  --coral: #e2654a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #14211f;
+    --card: #1e2f2c;
+    --ink: #f1ead9;
+    --muted: #9fb3ab;
+    --mustard: #f0b53a;
+    --teal: #4fb0a6;
+    --coral: #f08263;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #14211f;
+  --card: #1e2f2c;
+  --ink: #f1ead9;
+  --muted: #9fb3ab;
+  --mustard: #f0b53a;
+  --teal: #4fb0a6;
+  --coral: #f08263;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes hint-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.hint-pulse {
+  animation: hint-pulse 0.6s ease-in-out infinite;
+}
+
+@keyframes penalty-rise {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-24px);
+    opacity: 0;
+  }
+}
+
+.penalty-rise {
+  animation: penalty-rise 0.9s ease-out forwards;
+}

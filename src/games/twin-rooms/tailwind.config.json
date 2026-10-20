@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "mustard": "var(--mustard)",
+        "teal": "var(--teal)",
+        "coral": "var(--coral)"
+      },
+      "fontFamily": {
+        "display": ["\"Oleo Script\"", "Georgia", "serif"],
+        "body": ["Questrial", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

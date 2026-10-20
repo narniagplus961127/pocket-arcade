@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "velvet": "var(--velvet)",
+        "deep": "var(--deep)",
+        "gold": "var(--gold)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "suitred": "var(--suit-red)"
+      },
+      "fontFamily": {
+        "display": ["Limelight", "Georgia", "serif"],
+        "body": ["\"Red Hat Text\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "counter": "var(--counter)",
+        "dough": "var(--dough)",
+        "crust": "var(--crust)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "frosting": "var(--frosting)",
+        "mint": "var(--mint)"
+      },
+      "fontFamily": {
+        "display": ["Coiny", "system-ui", "sans-serif"],
+        "body": ["\"Albert Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

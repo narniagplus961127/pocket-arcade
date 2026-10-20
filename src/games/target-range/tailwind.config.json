@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "field": "var(--field)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "signal": "var(--signal)"
+      },
+      "fontFamily": {
+        "display": ["\"Familjen Grotesk\"", "system-ui", "sans-serif"],
+        "mono": ["\"DM Mono\"", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

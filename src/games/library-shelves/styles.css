@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a reading-room floor plan in a brass frame, call-number header above, ledger and controls below.
+   Single theme: green-leather reading room after hours. */
+:root {
+  --leather: #1f3a2e;
+  --leather-2: #284a3b;
+  --floor: #6b4a2f;
+  --floor-2: #5e4029;
+  --brass: #d4a64a;
+  --ink: #f3ead6;
+  --muted: #b6c4b0;
+  --font-display: 'Cormorant SC', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--leather);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 28px;
+}
+main {
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 10px;
+}
+h1 {
+  margin: 0;
+  font: 700 clamp(34px, 9vw, 46px)/1 var(--font-display);
+  color: var(--brass);
+  letter-spacing: 0.03em;
+}
+.call {
+  font: 600 13px/1 var(--font-display);
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.ledger {
+  display: flex;
+  gap: 16px;
+}
+.ledger div {
+  text-align: right;
+}
+.ledger span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ledger b {
+  font: 700 24px/1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.frame {
+  border: 4px solid var(--brass);
+  border-radius: 6px;
+  background: var(--leather-2);
+  padding: 10px;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  touch-action: none;
+}
+.msg {
+  min-height: 26px;
+  font: 700 20px/1.3 var(--font-display);
+  color: var(--brass);
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+button {
+  font: 700 14px/1 var(--font-body);
+  padding: 11px 15px;
+  border-radius: 4px;
+  border: 1.5px solid var(--brass);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+button.primary {
+  background: var(--brass);
+  color: #1f1608;
+}
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.pad {
+  display: grid;
+  grid-template-columns: repeat(3, 54px);
+  gap: 6px;
+  justify-content: center;
+}
+.pad button {
+  height: 48px;
+  font-size: 18px;
+}
+.note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+}

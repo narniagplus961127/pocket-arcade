@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: an airport departures hall. A split-flap board shows the country; you pick the capital to board the flight.
+     Single theme: a night-time terminal with an amber flap display. */
+:root {
+  --hall: #0f1218;
+  --board: #1a1d24;
+  --flap: #23272f;
+  --amber: #ffc23d;
+  --ink: #eef1f6;
+  --muted: #8b93a3;
+  --go: #3ddc84;
+  --stop: #ff5a4f;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--hall);
+  color: var(--ink);
+  min-height: 100vh;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+.flip {
+  animation: flip 0.25s ease-out both;
+  transform-origin: 50% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip {
+    animation: none;
+  }
+}

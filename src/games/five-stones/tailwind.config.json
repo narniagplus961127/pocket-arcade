@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "kaya": "var(--kaya)",
+        "grid": "var(--grid)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "accent": "var(--accent)"
+      },
+      "fontFamily": {
+        "display": ["\"Shippori Mincho\"", "Georgia", "serif"],
+        "body": ["\"Kumbh Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

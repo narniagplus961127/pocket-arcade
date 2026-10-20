@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=BIZ+UDPGothic:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: the dohyo seen from the hanging roof. A square clay mound, the straw-bale ring, and the four coloured
+     tassels at the corners; the bout tally hangs above like a banzuke board and the charge button sits below.
+     Single theme: dark lacquered hall, murasaki curtain purple, straw gold and warm clay. */
+:root {
+  --bg: #1d1510;
+  --ink: #f3e7d0;
+  --muted: #b49f86;
+  --murasaki: #6a2c74;
+  --straw: #dcc283;
+  --clay: #c99a66;
+  --card: rgba(29, 21, 16, 0.9);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 30%, #3a2a1f, var(--bg) 70%);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "cherry": "var(--cherry)",
+        "chrome": "var(--chrome)",
+        "cream": "var(--cream)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Yellowtail", "Georgia", "cursive"],
+        "body": ["Antonio", "\"Arial Narrow\"", "sans-serif"]
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Quicksand:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+/* Layout: a summer-night meadow on canvas with a mason jar at bottom center; timer and count in the top corners.
+   Single night theme: fireflies only come out after dark. */
+:root {
+  --night: #0b1a17;
+  --moss: #1e3a2f;
+  --glow: #efff8a;
+  --gold: #ffcf4a;
+  --ink: #eef4e4;
+  --muted: #9db8a6;
+  --moth: #b9a9c9;
+  --card: rgba(13, 30, 26, 0.86);
+  --font-display: 'Amatic SC', 'Comic Sans MS', cursive;
+  --font-body: 'Quicksand', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--night);
+  color: var(--ink);
+}
+body {
+  font-family: var(--font-body);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+.hud {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 10px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.k {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.v {
+  font: 700 46px/1 var(--font-display);
+  color: var(--glow);
+  font-variant-numeric: tabular-nums;
+}
+.v.low {
+  color: #ff9a7a;
+}
+.mid {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding-block: 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: rgba(6, 14, 12, 0.45);
+}
+.card {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 24px 24px 26px;
+  border-radius: 20px 20px 60px 20px;
+  background: var(--card);
+  border: 1px solid rgba(239, 255, 138, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 60px rgba(239, 255, 138, 0.08);
+}
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--glow);
+  text-shadow: 0 0 24px rgba(239, 255, 138, 0.45);
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(64px, 18vw, 84px);
+}
+h2 {
+  font-size: 56px;
+}
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+.legend {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px;
+  align-items: center;
+  font-size: 15px;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.btn {
+  align-self: flex-start;
+  font: 700 30px/1 var(--font-display);
+  letter-spacing: 0.04em;
+  padding: 10px 26px 12px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--glow);
+  color: #17240f;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(239, 255, 138, 0.35);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}

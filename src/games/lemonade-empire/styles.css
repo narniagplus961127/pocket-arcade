@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Urbanist:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: #fff;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+[hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Layout: a lemonade stand under a striped awning. One giant lemon to squeeze, the till above it,
+     and the business ledger of upgrades on the right (below on phones).
+     Light: a hot summer afternoon. Dark: a summer evening with string lights. */
+:root {
+  --bg: #fff6cf;
+  --card: #ffffff;
+  --ink: #2d2a1a;
+  --muted: #776f4d;
+  --lemon: #ffd83d;
+  --leaf: #58a64b;
+  --awning: #e85a4f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #1b1810;
+    --card: #26221a;
+    --ink: #f6efd5;
+    --muted: #b3a982;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #1b1810;
+  --card: #26221a;
+  --ink: #f6efd5;
+  --muted: #b3a982;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.awning {
+  background: repeating-linear-gradient(90deg, var(--awning) 0 40px, #fff 40px 80px);
+  -webkit-mask: radial-gradient(circle 20px at 20px 100%, #0000 98%, #000) 0 0 / 40px 100%;
+  mask: radial-gradient(circle 20px at 20px 100%, #0000 98%, #000) 0 0 / 40px 100%;
+}
+
+@keyframes float-up {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -70px);
+    opacity: 0;
+  }
+}
+
+.float-up {
+  animation: float-up 0.9s ease-out forwards;
+}

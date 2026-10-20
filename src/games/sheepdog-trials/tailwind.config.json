@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "moss": "var(--moss)",
+        "slate": "var(--slate)",
+        "heather": "var(--heather)"
+      },
+      "fontFamily": {
+        "display": ["\"Uncial Antiqua\"", "Georgia", "serif"],
+        "body": ["Overlock", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

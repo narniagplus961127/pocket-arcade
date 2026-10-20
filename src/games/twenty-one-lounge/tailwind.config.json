@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "night": "var(--night)",
+        "felt": "var(--felt)",
+        "neon": "var(--neon)",
+        "card": "var(--card)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "win": "var(--win)"
+      },
+      "fontFamily": {
+        "display": ["\"Bebas Neue\"", "Impact", "sans-serif"],
+        "body": ["\"IBM Plex Sans\"", "system-ui", "sans-serif"]
+      }
+    }
+  }
+}

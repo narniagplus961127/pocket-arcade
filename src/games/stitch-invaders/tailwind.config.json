@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "aida": "var(--aida)",
+        "hoop": "var(--hoop)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "thread": "var(--thread)"
+      },
+      "fontFamily": {
+        "display": ["Gaegu", "cursive"],
+        "body": ["Sono", "ui-monospace", "monospace"]
+      }
+    }
+  }
+}

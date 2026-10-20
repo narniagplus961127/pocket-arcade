@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": "var(--bg)",
+        "ivory": "var(--ivory)",
+        "ink": "var(--ink)",
+        "muted": "var(--muted)",
+        "gold": "var(--gold)",
+        "card": "var(--card)"
+      },
+      "fontFamily": {
+        "display": ["Bellefair", "Georgia", "serif"],
+        "body": ["Gelasio", "Georgia", "serif"]
+      }
+    }
+  }
+}
