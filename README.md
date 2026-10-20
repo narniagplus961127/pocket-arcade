@@ -2,6 +2,8 @@
 
 **100 little games. One shelf. Pick something and play.**
 
+[Play Pocket Arcade](https://qw-pocket-arcade.vercel.app/)
+
 Pocket Arcade is a collection of small browser games, each with its own look, sound, and personality. Take a quick break, chase a high score, or settle into a puzzle. No account or sign-in needed.
 
 ## Find your next game
